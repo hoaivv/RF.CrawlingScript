@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F6849D4B-2332-4637-9DF9-DA1B86D19BA0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RF.CrawlingScript</RootNamespace>
+    <AssemblyName>RF.CrawlingScript</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Shark">
+      <HintPath>..\..\Shark\Builds\[API]\[core]\Shark.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="block.cs" />
+    <Compile Include="Components\ContextDataValue.cs" />
+    <Compile Include="Components\ContextDictionaryValue.cs" />
+    <Compile Include="Components\ContextLogicValue.cs" />
+    <Compile Include="Components\ContextNumberValue.cs" />
+    <Compile Include="Components\ContextTextPairValue.cs" />
+    <Compile Include="Components\ContextTextValue.cs" />
+    <Compile Include="Components\DataExpression.cs" />
+    <Compile Include="Components\DataExpressionValue.cs" />
+    <Compile Include="Components\DataValue.cs" />
+    <Compile Include="Components\DataVariable.cs" />
+    <Compile Include="Components\DictionaryExpressionValue.cs" />
+    <Compile Include="Components\TextPairExpression.cs" />
+    <Compile Include="Components\TextPairKeyExpression.cs" />
+    <Compile Include="Components\TextPairValue.cs" />
+    <Compile Include="Components\DictionaryExpression.cs" />
+    <Compile Include="Components\DictionaryValue.cs" />
+    <Compile Include="Components\SerializerContractAttribute.cs" />
+    <Compile Include="Components\TextPairValueExpression.cs" />
+    <Compile Include="Definitions\ISet.cs" />
+    <Compile Include="dict.cs" />
+    <Compile Include="exec.cs" />
+    <Compile Include="Components\LogicValue.cs" />
+    <Compile Include="Components\NumberValue.cs" />
+    <Compile Include="Components\TextValue.cs" />
+    <Compile Include="Context.cs" />
+    <Compile Include="Definitions\ISerializable.cs" />
+    <Compile Include="Definitions\LogicOperations.cs" />
+    <Compile Include="Definitions\NumberCompareOperations.cs" />
+    <Compile Include="Definitions\NumberOperations.cs" />
+    <Compile Include="Definitions\ICode.cs" />
+    <Compile Include="Definitions\IExpression.cs" />
+    <Compile Include="Definitions\IVariable.cs" />
+    <Compile Include="Definitions\TextCompareOperations.cs" />
+    <Compile Include="Definitions\TextOperations.cs" />
+    <Compile Include="f.cs" />
+    <Compile Include="Functions\Clear.cs" />
+    <Compile Include="Functions\Get.cs" />
+    <Compile Include="Functions\ContainValue.cs" />
+    <Compile Include="Functions\Count.cs" />
+    <Compile Include="Functions\FirstIndex.cs" />
+    <Compile Include="Functions\ContainKey.cs" />
+    <Compile Include="Functions\FirstKeyOf.cs" />
+    <Compile Include="Functions\HtmlDecode.cs" />
+    <Compile Include="Functions\IsNumber.cs" />
+    <Compile Include="Functions\LastIndex.cs" />
+    <Compile Include="Functions\Read.cs" />
+    <Compile Include="Functions\ReadKey.cs" />
+    <Compile Include="Functions\ReadLine.cs" />
+    <Compile Include="Functions\Replace.cs" />
+    <Compile Include="Functions\ToASCII.cs" />
+    <Compile Include="Functions\ToData.cs" />
+    <Compile Include="Functions\ToLogic.cs" />
+    <Compile Include="Functions\ToLower.cs" />
+    <Compile Include="Functions\ToNumber.cs" />
+    <Compile Include="Functions\Max.cs" />
+    <Compile Include="Functions\Min.cs" />
+    <Compile Include="Functions\Length.cs" />
+    <Compile Include="Functions\ToText.cs" />
+    <Compile Include="Functions\ToUpper.cs" />
+    <Compile Include="Functions\Write.cs" />
+    <Compile Include="Functions\SubString.cs" />
+    <Compile Include="Functions\WriteFile.cs" />
+    <Compile Include="Functions\WriteLine.cs" />
+    <Compile Include="EachExtension.cs" />
+    <Compile Include="pair.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StayExtension.cs" />
+    <Compile Include="Structures\For.cs" />
+    <Compile Include="Structures\Leave.cs" />
+    <Compile Include="Components\Code.cs" />
+    <Compile Include="Components\CodeBlock.cs" />
+    <Compile Include="Utilities\EachWrapper.cs" />
+    <Compile Include="Utilities\Http\MultiPartRequestData.cs" />
+    <Compile Include="Utilities\OthersDirective.cs" />
+    <Compile Include="Functions\Request.cs" />
+    <Compile Include="Structures\Switch.cs" />
+    <Compile Include="Structures\SwitchNumber.cs" />
+    <Compile Include="Utilities\Http\IRequestData.cs" />
+    <Compile Include="Utilities\Http\TextRequestData.cs" />
+    <Compile Include="Utilities\Http\FormRequestData.cs" />
+    <Compile Include="Utilities\Http\RequestResults.cs" />
+    <Compile Include="Utilities\Http\Transaction.cs" />
+    <Compile Include="Utilities\OthersWrapper.cs" />
+    <Compile Include="Utilities\StayWrapper.cs" />
+    <Compile Include="Structures\While.cs" />
+    <Compile Include="Structures\ForEach.cs" />
+    <Compile Include="Structures\SwitchLogic.cs" />
+    <Compile Include="Functions\Match.cs" />
+    <Compile Include="Functions\Matches.cs" />
+    <Compile Include="Components\Setter.cs" />
+    <Compile Include="Structures\SwitchText.cs" />
+    <Compile Include="Script.cs" />
+    <Compile Include="Components\LogicExpression.cs" />
+    <Compile Include="Components\LogicNotExpression.cs" />
+    <Compile Include="Components\LogicCombineExpression.cs" />
+    <Compile Include="Components\LogicVariable.cs" />
+    <Compile Include="Components\NumberExpression.cs" />
+    <Compile Include="Components\NumberCompareExpression.cs" />
+    <Compile Include="Components\NumberCombineExpression.cs" />
+    <Compile Include="Components\NumberVariable.cs" />
+    <Compile Include="Components\DictionaryVariable.cs" />
+    <Compile Include="Components\TextPairVariable.cs" />
+    <Compile Include="Utilities\CaseWrapper.cs" />
+    <Compile Include="Components\TextCompareExpression.cs" />
+    <Compile Include="Components\TextExpression.cs" />
+    <Compile Include="Components\TextCombineExpression.cs" />
+    <Compile Include="Components\TextVariable.cs" />
+    <Compile Include="Components\Value.cs" />
+    <Compile Include="x.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "[API]", "[API]", "{1CF9467A-3A7B-4984-8B56-61C3CCB33DB6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "[Examples]", "[Examples]", "{FDD15657-27B7-4C6B-8240-C9E218B8EB1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RF.CrawlingScript", "Sources\[API]\RF.CrawlingScript\RF.CrawlingScript.csproj", "{F6849D4B-2332-4637-9DF9-DA1B86D19BA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RF.CrawlingScript.Examples", "Sources\[Examples]\RF.CrawlingScript.Examples\RF.CrawlingScript.Examples.csproj", "{4F251361-F828-4DC9-B3C1-A378640DAF14}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6849D4B-2332-4637-9DF9-DA1B86D19BA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6849D4B-2332-4637-9DF9-DA1B86D19BA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6849D4B-2332-4637-9DF9-DA1B86D19BA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6849D4B-2332-4637-9DF9-DA1B86D19BA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F251361-F828-4DC9-B3C1-A378640DAF14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F251361-F828-4DC9-B3C1-A378640DAF14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F251361-F828-4DC9-B3C1-A378640DAF14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F251361-F828-4DC9-B3C1-A378640DAF14}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F6849D4B-2332-4637-9DF9-DA1B86D19BA0} = {1CF9467A-3A7B-4984-8B56-61C3CCB33DB6}
+		{4F251361-F828-4DC9-B3C1-A378640DAF14} = {FDD15657-27B7-4C6B-8240-C9E218B8EB1D}
+	EndGlobalSection
+EndGlobal
