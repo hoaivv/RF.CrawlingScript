@@ -10,13 +10,10 @@ using System.IO;
 namespace RF.CrawlingScript.Components
 {
     /// <summary>
-    /// Describes a variable which represent a <see cref="byte[]"/> in RFCScript
+    /// Describes a variable which represent a <see cref="byte"/> array in RFCScript
     /// </summary>
     public partial class DataVariable : DataExpression, IVariable<byte[]>
     {
-        /// <summary>
-        /// Variable's identifier
-        /// </summary>
         private int Name { get; set; }
     }
 

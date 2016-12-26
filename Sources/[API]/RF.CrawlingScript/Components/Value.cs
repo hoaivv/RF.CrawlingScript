@@ -61,9 +61,23 @@ namespace RF.CrawlingScript.Components
 
     partial class Value<T> // abstract
     {
-
+        /// <summary>
+        /// Evalutes the expression. This method is designed to be invoked internally by RFCScript components only.
+        /// </summary>
+        /// <param name="context">Context on which the script is running</param>
+        /// <param name="result">Result of the expression evaluation</param>
         public abstract void Evaluate(Context context, out object result);
+
+        /// <summary>
+        /// Serialize component data to a specified output. This method is designed to be invoked internally by RFCScript components only.
+        /// </summary>
+        /// <param name="output">Ouput, to which the component's data sould be written</param>
         public abstract void Serialize(BinaryWriter output);
+
+        /// <summary>
+        /// Deserialize component data from a specified input. This method is designed to be invoked internally by RFCScript components only.
+        /// </summary>
+        /// <param name="input">Input, on which component's data is available to read</param>
         public abstract void Deserialize(BinaryReader input);
     }
 

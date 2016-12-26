@@ -1,0 +1,1640 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Shark</name>
+    </assembly>
+    <members>
+        <member name="T:Shark.Automations">
+            <summary>
+            Shark Automation Manager
+            </summary>
+            <remarks>
+            This class provides access to registered Shark Automations and allows custom registration of Shark Automation.
+            </remarks>
+        </member>
+        <member name="P:Shark.Automations.All">
+            <summary>
+            Get all registered Shark Automations.
+            </summary>
+        </member>
+        <member name="P:Shark.Automations.RunningAutomations">
+            <summary>
+            Get all running Shark Automations
+            </summary>
+        </member>
+        <member name="P:Shark.Automations.HasRunningAutomation">
+            <summary>
+            Indicates whether one or more automation is currently running
+            </summary>
+        </member>
+        <member name="P:Shark.Automations.RunningAutomationCount">
+            <summary>
+            Number of currently running automations
+            </summary>
+        </member>
+        <member name="M:Shark.Automations.IsRegistered(Shark.Components.IAutomation)">
+            <summary>
+            Test if an automation is registered or not
+            </summary>
+            <param name="automation">Automation to be tested</param>
+            <returns>true if provided automation is registered, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Automations.IsRegistered(Shark.Worker)">
+            <summary>
+            Test if a worker is registered as an automation or not
+            </summary>
+            <param name="worker">Worker to be tested</param>
+            <returns>true if provided worker is registered as an automation, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Automations.Get``1">
+            <summary>
+            Get registered Shark Automation by its type.
+            </summary>
+            <typeparam name="T">Type of registered Shark Automation</typeparam>
+            <returns>Shark Automation of type T if it is registed, otherwise null</returns>
+        </member>
+        <member name="M:Shark.Automations.Register(System.Type)">
+            <summary>
+            Register Shark Automation with Shark Framework.
+            </summary>
+            <param name="T">Type of registering Shark Automation</param>
+            <returns>true if registration succeed, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Automations.Get(System.Type)">
+            <summary>
+            Get Registered Shark Automation by its type.
+            </summary>
+            <param name="T">Type of registered Shark Automation</param>
+            <returns>Shark Automation of type T if it is registered, otherwise null</returns>
+        </member>
+        <member name="T:Shark.Common.Log">
+            <summary>
+            Controls logging operation
+            </summary>
+            <remarks>This class is depricated</remarks>
+        </member>
+        <member name="E:Shark.Common.Log.OnLogged">
+            <summary>
+            This event is no longer supported. Use <see cref="E:Shark.Framework.OnLogged"/> instead.
+            </summary>
+        </member>
+        <member name="P:Shark.Common.Log.Enabled">
+            <summary>
+            Enable/disable logging operation
+            </summary>
+        </member>
+        <member name="T:Shark.Common.Cryptor">
+            <summary>
+            Provide encryption/decryption services which is commonly used by Shark Framework components
+            </summary>
+        </member>
+        <member name="M:Shark.Common.Cryptor.ToMD5(System.String)">
+            <summary>
+            Encrypt string using MD5 encryption algorithm
+            </summary>
+            <param name="text">Text which is needed to be encrypted</param>
+            <returns>MD5 encrypted text if operation is succeed, otherwise null</returns>
+        </member>
+        <member name="M:Shark.Common.Cryptor.ToBase64(System.String)">
+            <summary>
+            Encrypt string using Base64 encryption algorithm
+            </summary>
+            <param name="text">Text which is needed to be encrypted</param>
+            <returns>Base64 encrypted text if operation is succeed, otherwise null</returns>
+        </member>
+        <member name="M:Shark.Common.Cryptor.ToMD5(System.Byte[])">
+            <summary>
+            Encrypt byte array using MD5 Encryption Algorithm
+            </summary>
+            <param name="data">Byte array which is needed to be encrypted</param>
+            <returns>MD5 encrypted byte array if operation is succeed, otherwise emty array</returns>
+        </member>
+        <member name="M:Shark.Common.Cryptor.MD5ToString(System.Byte[])">
+            <summary>
+            Convert MD5 encrypted byte array to MD5 encrypted string
+            </summary>
+            <param name="data">MD5 encrypted byte array</param>
+            <returns>MD5 encrypted string if operation succeed, otherwise null</returns>
+        </member>
+        <member name="M:Shark.Common.Cryptor.Base64ToString(System.String)">
+            <summary>
+            Decrypt Base64 encrypted text
+            </summary>
+            <param name="text">Encrypted Base64 string</param>
+            <returns>Decrypted string if operation succeed, otherwise null</returns>
+        </member>
+        <member name="T:Shark.Common.SingleThreadedWorker">
+            <summary>
+            Base class provide single working thread environment for its derivered classes
+            </summary>
+            <remarks>This class is deprecated</remarks>
+        </member>
+        <member name="M:Shark.Common.SingleThreadedWorker.Initialise">
+            <summary>
+            Initialise SingleThreadedWorker
+            </summary>        
+        </member>
+        <member name="M:Shark.Common.SingleThreadedWorker.WorkOnce">
+            <summary>
+            Method is called continuously after the thread is started.
+            </summary>
+        </member>
+        <member name="T:Shark.Common.GlobalSettings">
+            <summary>
+            Provides access to Shark Framework settings. This class is deprecated, use <see cref="T:Shark.Framework"/> instead.
+            </summary>
+        </member>
+        <member name="P:Shark.Common.GlobalSettings.AllowAllLogs">
+            <summary>
+            This property is no longer supported, user <see cref="P:Shark.Framework.LogEnabled"/> instead.
+            </summary>
+        </member>
+        <member name="P:Shark.Common.GlobalSettings.AllowInformationLogs">
+            <summary>
+            This property is no longer supported, user <see cref="P:Shark.Framework.LogEnabled"/> instead.
+            </summary>
+        </member>
+        <member name="P:Shark.Common.GlobalSettings.AllowWarningLogs">
+            <summary>
+            This property is no longer supported, user <see cref="P:Shark.Framework.LogEnabled"/> instead.
+            </summary>
+        </member>
+        <member name="P:Shark.Common.GlobalSettings.AllowErrorLogs">
+            <summary>
+            This property is no longer supported, user <see cref="P:Shark.Framework.LogEnabled"/> instead.
+            </summary>
+        </member>
+        <member name="P:Shark.Common.GlobalSettings.LogDirectory">
+            <summary>
+            Directory where Shark Framework will store logs. This property is deprecated, use <see cref="P:Shark.Framework.LogDirectory"/> instead.
+            </summary>
+        </member>
+        <member name="P:Shark.Common.GlobalSettings.ModuleDirectory">
+            <summary>
+            Directory where Shark Framework will looking for module dlls. This property is deprecated, use <see cref="P:Shark.Framework.ModuleDirectory"/> instead.
+            </summary>
+        </member>
+        <member name="P:Shark.Common.GlobalSettings.BaseDirectory">
+            <summary>
+            Directory where application default assembly resolver uses to probe for assemblies. This property is deprecated, use <see cref="P:Shark.Framework.BaseDirectory"/> instead.
+            </summary>
+        </member>
+        <member name="P:Shark.Common.GlobalSettings.DataDirectory">
+            <summary>
+            Directory where Shark Framework will store its data. This property is deprecated, use <see cref="P:Shark.Framework.DataDirectory"/> instead.
+            </summary>
+        </member>
+        <member name="T:Shark.Extensions.DateTimeExtensions">
+            <summary>
+            Implements extended methods for <see cref="T:System.DateTime"/>
+            </summary>
+        </member>
+        <member name="M:Shark.Extensions.DateTimeExtensions.AddMonths(System.DateTime,System.Double)">
+            <summary>
+            Returns a new <see cref="T:System.DateTime"/> that adds the specified number of months to the value of this instance.
+            </summary>
+            <param name="instance">Original <see cref="T:System.DateTime"/> value, to which specified number of months will be added</param>
+            <param name="months">A number of months. The months parameter can be negative or positive.</param>
+            <returns>A <see cref="T:System.DateTime"/> whose value is the sum of the date and time represented by this instance and <paramref name="months"/>.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:Shark.Extensions.DateTimeExtensions.AddYears(System.DateTime,System.Double)">
+            <summary>
+            Returns a new <see cref="T:System.DateTime"/> that adds the specified number of years to the value of this instance.
+            </summary>
+            <param name="instance">Original <see cref="T:System.DateTime"/> value, to which specified number of years will be added</param>
+            <param name="years">A number of years. The years parameter can be negative or positive.</param>
+            <returns>A <see cref="T:System.DateTime"/> whose value is the sum of the date and time represented by this instance and <paramref name="years"/>.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:Shark.Extensions.DateTimeExtensions.GetTotalMonthsFrom(System.DateTime,System.DateTime)">
+            <summary>
+            Gets total number of months between this instance and specified instance of <see cref="T:System.DateTime"/> in whole and fractional.
+            </summary>
+            <param name="instance"><see cref="T:System.DateTime"/> value, served as end point of time in calculation</param>
+            <param name="from"><see cref="T:System.DateTime"/> value, served as start point of time in calculation</param>
+            <returns>total number of months between provided <see cref="T:System.DateTime"/> instances</returns>
+        </member>
+        <member name="M:Shark.Extensions.DateTimeExtensions.GetTotalYearsFrom(System.DateTime,System.DateTime)">
+            <summary>
+            Gets total number of years between this instance and specified instance of <see cref="T:System.DateTime"/> in whole and fractional.
+            </summary>
+            <param name="instance"><see cref="T:System.DateTime"/> value, served as end point of time in calculation</param>
+            <param name="from"><see cref="T:System.DateTime"/> value, served as start point of time in calculation</param>
+            <returns>total number of years between provided <see cref="T:System.DateTime"/> instances</returns>
+        </member>
+        <member name="T:Shark.Extensions.TypeExtensions">
+            <summary>
+            Implements extended methods for <see cref="T:System.Type"/>
+            </summary>
+        </member>
+        <member name="M:Shark.Extensions.TypeExtensions.FriendlyName(System.Type)">
+            <summary>
+            Get <see cref="T:System.Type"/>'s human readable name
+            </summary>
+            <param name="type"><see cref="T:System.Type"/>'s instance, friendly name of which will be returned</param>
+            <returns>Human readable name of the instance</returns>
+        </member>
+        <member name="M:Shark.Extensions.TypeExtensions.FriendlyName(System.Reflection.MethodBase)">
+            <summary>
+            Get <see cref="T:System.Reflection.MethodBase"/>'s human readble name
+            </summary>
+            <param name="method"><see cref="T:System.Reflection.MethodBase"/>'s instance, friendly name of which will be returned</param>
+            <returns>Human readable name of the instance</returns>
+        </member>
+        <member name="M:Shark.Extensions.TypeExtensions.GetMaxLength(System.String,System.Int32)">
+            <summary>
+            Get subtracted string from a given string if the given string excced provided length 
+            </summary>
+            <param name="text">String to be subtracted</param>
+            <param name="max">Maximum length of the string</param>
+            <returns>subtracted string from a given string if the given string excced provided length </returns>
+        </member>
+        <member name="T:Shark.Runtime.SafeOperation">
+            <summary>
+            Provides API to ensure safe operations
+            </summary>
+        </member>
+        <member name="P:Shark.Runtime.SafeOperation.NewOperation">
+            <summary>
+            Get new instance of <see cref="T:Shark.Runtime.SafeOperation"/>
+            </summary>
+        </member>
+        <member name="M:Shark.Runtime.SafeOperation.AddLock(Shark.Runtime.ITypeScopeDistinguishable[])">
+            <summary>
+            Add objects to the list of to be locked objects when <see cref="M:Shark.Runtime.SafeOperation.Process(System.Action)"/> or <see cref="M:Shark.Runtime.SafeOperation.Process``1(System.Func{``0})"/> is invoked
+            </summary>
+            <param name="objects">Object to be added</param>
+            <returns>Current instance of <see cref="T:Shark.Runtime.SafeOperation"/></returns>
+        </member>
+        <member name="M:Shark.Runtime.SafeOperation.RemoveLock(Shark.Runtime.ITypeScopeDistinguishable[])">
+            <summary>
+            Remove objects from list of to be locked objects when <see cref="M:Shark.Runtime.SafeOperation.Process(System.Action)"/> or <see cref="M:Shark.Runtime.SafeOperation.Process``1(System.Func{``0})"/> is invoked
+            </summary>
+            <param name="objects">Objects to be removed</param>
+            <returns>Current instance of <see cref="T:Shark.Runtime.SafeOperation"/></returns>
+        </member>
+        <member name="M:Shark.Runtime.SafeOperation.Process(System.Action)">
+            <summary>
+            Process an action
+            </summary>
+            <param name="action">Action to be processing</param>
+            <returns>Current instance of <see cref="T:Shark.Runtime.SafeOperation"/></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Shark.Runtime.SafeOperation.ProcessASync(System.Action)">
+            <summary>
+            Process an action asynchronously
+            </summary>
+            <param name="action">Action to be processing</param>
+            <returns>Current instance of <see cref="T:Shark.Runtime.SafeOperation"/></returns>
+        </member>
+        <member name="M:Shark.Runtime.SafeOperation.Process``1(System.Func{``0})">
+            <summary>
+            Process an action
+            </summary>
+            <typeparam name="T">Type of result</typeparam>
+            <param name="action">Action to be processing</param>
+            <returns>Result of action</returns>
+        </member>
+        <member name="M:Shark.Runtime.SafeOperation.ProcessASync``1(System.Func{``0},Shark.Runtime.SafeOperationASyncCallback{``0},``0,System.Object)">
+            <summary>
+            Process an action asynchronously
+            </summary>
+            <param name="action">Action to be processing</param>
+            <param name="callback">Callback to be invoked after <paramref name="action"/> is proceed</param>
+            <param name="onFailed">Value to be passed to <paramref name="callback"/> if error detected while processing <paramref name="action"/></param>
+            <param name="state">Object to be passed to <paramref name="callback"/></param>
+            <returns>Current instance of <see cref="T:Shark.Runtime.SafeOperation"/></returns>
+        </member>
+        <member name="T:Shark.Runtime.ITypeScopeDistinguishable">
+            <summary>
+            Describes a data, distinguisable in its type's scope
+            </summary>
+        </member>
+        <member name="P:Shark.Runtime.ITypeScopeDistinguishable.TypeScopeUniqueIdentifier">
+            <summary>
+            Unique identifier of the object in its Type's scope
+            </summary>
+        </member>
+        <member name="P:Shark.Runtime.ITypeScopeDistinguishable.TypeScopeUniqueInstance">
+            <summary>
+            Unique instance of the object in its Type's scope
+            </summary>
+        </member>
+        <member name="T:Shark.Runtime.ManagedThreads">
+            <summary>
+            Runs threads and manages allocated threads to ensure they will be stopped when the framework is stopped
+            </summary>
+        </member>
+        <member name="M:Shark.Runtime.ManagedThreads.Start(Shark.Task,System.Object,System.Boolean)">
+            <summary>
+            Start a task in a new  managed thread
+            </summary>
+            <param name="task">task to be proceed in a new thread</param>
+            <param name="state">object used to pass states to task</param>
+            <param name="isRepeating">indicates whether task will be proceed repeatedly</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Shark.Runtime.ManagedThreads.Start(System.Action)">
+            <summary>
+            Start an action in a new managed thread
+            </summary>
+            <param name="action">action to be proceed in a new thread</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Shark.Runtime.ManagedThreads.Stop">
+            <summary>
+            Stop all tasks which is currently running
+            </summary>
+        </member>
+        <member name="P:Shark.Runtime.ManagedThreads.IsStopping">
+            <summary>
+            Indicates whether tasks are requested to stop
+            </summary>
+        </member>
+        <member name="T:Shark.Runtime.StoredStates">
+            <summary>
+            Allows components to store and retrive working states 
+            </summary>
+        </member>
+        <member name="P:Shark.Runtime.StoredStates.IsLoaded">
+            <summary>
+            Indicates whether stored states are loaded
+            </summary>
+        </member>
+        <member name="M:Shark.Runtime.StoredStates.Delete``1(System.String)">
+            <summary>
+            Delete stored state
+            </summary>
+            <typeparam name="T">Owner of the deleting state</typeparam>
+            <param name="name">Name of the deleting state</param>
+            <returns>true if state is deleted, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Runtime.StoredStates.Get``1(System.String)">
+            <summary>
+            Get stored state
+            </summary>
+            <param name="name">Name of required state</param>
+            <returns>value of required state if succeed, otherwise onFailed value will be returned</returns>
+        </member>
+        <member name="M:Shark.Runtime.StoredStates.GetString``1(System.String,System.String)">
+            <summary>
+            Get stored state's value as a <see cref="T:System.String"/>
+            </summary>
+            <typeparam name="T">Owner of the state</typeparam>
+            <param name="name">Name of the state</param>
+            <param name="onFailed">Value to be returned if the state could not be retrived as a string</param>
+            <returns><see cref="T:System.String"/> represent state's value if succeed, otherwise <paramref name="onFailed"/></returns>
+        </member>
+        <member name="M:Shark.Runtime.StoredStates.GetBool``1(System.String,System.Boolean)">
+            <summary>
+            Get stored state's value as a <see cref="T:System.Boolean"/> value
+            </summary>
+            <typeparam name="T">Owner of the state</typeparam>
+            <param name="name">Name of the state</param>
+            <param name="onFailed">Value to be returned if the state could not be retrived as a string</param>
+            <returns><see cref="T:System.Boolean"/> value represent state's value if succeed, otherwise <paramref name="onFailed"/></returns>
+        </member>
+        <member name="M:Shark.Runtime.StoredStates.GetByte``1(System.String,System.Byte)">
+            <summary>
+            Get stored state's value as a <see cref="T:System.Byte"/> value
+            </summary>
+            <typeparam name="T">Owner of the state</typeparam>
+            <param name="name">Name of the state</param>
+            <param name="onFailed">Value to be returned if the state could not be retrived as a string</param>
+            <returns><see cref="T:System.Byte"/> value represent state's value if succeed, otherwise <paramref name="onFailed"/></returns>
+        </member>
+        <member name="M:Shark.Runtime.StoredStates.GetInt32``1(System.String,System.Int32)">
+            <summary>
+            Get stored state's value as a <see cref="T:System.Int32"/> value
+            </summary>
+            <typeparam name="T">Owner of the state</typeparam>
+            <param name="name">Name of the state</param>
+            <param name="onFailed">Value to be returned if the state could not be retrived as a string</param>
+            <returns><see cref="T:System.Int32"/> value represent state's value if succeed, otherwise <paramref name="onFailed"/></returns>
+        </member>
+        <member name="M:Shark.Runtime.StoredStates.GetUInt32``1(System.String,System.UInt32)">
+            <summary>
+            Get stored state's value as a <see cref="T:System.UInt32"/> value
+            </summary>
+            <typeparam name="T">Owner of the state</typeparam>
+            <param name="name">Name of the state</param>
+            <param name="onFailed">Value to be returned if the state could not be retrived as a string</param>
+            <returns><see cref="T:System.UInt32"/> value represent state's value if succeed, otherwise <paramref name="onFailed"/></returns>
+        </member>
+        <member name="M:Shark.Runtime.StoredStates.GetInt64``1(System.String,System.Int64)">
+            <summary>
+            Get stored state's value as a <see cref="T:System.Int64"/> value
+            </summary>
+            <typeparam name="T">Owner of the state</typeparam>
+            <param name="name">Name of the state</param>
+            <param name="onFailed">Value to be returned if the state could not be retrived as a string</param>
+            <returns><see cref="T:System.Int64"/> value represent state's value if succeed, otherwise <paramref name="onFailed"/></returns>
+        </member>
+        <member name="M:Shark.Runtime.StoredStates.GetUInt64``1(System.String,System.UInt64)">
+            <summary>
+            Get stored state's value as a <see cref="T:System.UInt64"/> value
+            </summary>
+            <typeparam name="T">Owner of the state</typeparam>
+            <param name="name">Name of the state</param>
+            <param name="onFailed">Value to be returned if the state could not be retrived as a string</param>
+            <returns><see cref="T:System.UInt64"/> value represent state's value if succeed, otherwise <paramref name="onFailed"/></returns>
+        </member>
+        <member name="M:Shark.Runtime.StoredStates.GetSingle``1(System.String,System.Single)">
+            <summary>
+            Get stored state's value as a <see cref="T:System.Single"/> value
+            </summary>
+            <typeparam name="T">Owner of the state</typeparam>
+            <param name="name">Name of the state</param>
+            <param name="onFailed">Value to be returned if the state could not be retrived as a string</param>
+            <returns><see cref="T:System.Single"/> value represent state's value if succeed, otherwise <paramref name="onFailed"/></returns>
+        </member>
+        <member name="M:Shark.Runtime.StoredStates.GetDouble``1(System.String,System.Double)">
+            <summary>
+            Get stored state's value as a <see cref="T:System.Double"/> value
+            </summary>
+            <typeparam name="T">Owner of the state</typeparam>
+            <param name="name">Name of the state</param>
+            <param name="onFailed">Value to be returned if the state could not be retrived as a string</param>
+            <returns><see cref="T:System.Double"/> value represent state's value if succeed, otherwise <paramref name="onFailed"/></returns>
+        </member>
+        <member name="M:Shark.Runtime.StoredStates.GetDecimal``1(System.String,System.Decimal)">
+            <summary>
+            Get stored state's value as a <see cref="T:System.Decimal"/> value
+            </summary>
+            <typeparam name="T">Owner of the state</typeparam>
+            <param name="name">Name of the state</param>
+            <param name="onFailed">Value to be returned if the state could not be retrived as a string</param>
+            <returns><see cref="T:System.Decimal"/> value represent state's value if succeed, otherwise <paramref name="onFailed"/></returns>
+        </member>
+        <member name="M:Shark.Runtime.StoredStates.GetDateTime``1(System.String,System.DateTime)">
+            <summary>
+            Get stored state's value as a <see cref="T:System.DateTime"/> value
+            </summary>
+            <typeparam name="T">Owner of the state</typeparam>
+            <param name="name">Name of the state</param>
+            <param name="onFailed">Value to be returned if the state could not be retrived as a string</param>
+            <returns><see cref="T:System.DateTime"/> value represent state's value if succeed, otherwise <paramref name="onFailed"/></returns>
+        </member>
+        <member name="M:Shark.Runtime.StoredStates.GetTimeSpan``1(System.String,System.TimeSpan)">
+            <summary>
+            Get stored state's value as a <see cref="T:System.TimeSpan"/> value
+            </summary>
+            <typeparam name="T">Owner of the state</typeparam>
+            <param name="name">Name of the state</param>
+            <param name="onFailed">Value to be returned if the state could not be retrived as a string</param>
+            <returns><see cref="T:System.TimeSpan"/> value represent state's value if succeed, otherwise <paramref name="onFailed"/></returns>
+        </member>
+        <member name="M:Shark.Runtime.StoredStates.Set``1(System.String,System.Byte[])">
+            <summary>
+            Set stored state
+            </summary>
+            <param name="name">Name of storing state</param>
+            <param name="value">Value of storing state</param>
+            <returns>true if succeed, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Runtime.StoredStates.Set``1(System.String,System.String)">
+            <summary>
+            Set value for stored state
+            </summary>
+            <typeparam name="T">Owner of the state</typeparam>
+            <param name="name">Name of the state</param>
+            <param name="value">Value to be stored</param>
+            <returns>true if succeed, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Runtime.StoredStates.Set``1(System.String,System.Boolean)">
+            <summary>
+            Set value for stored state
+            </summary>
+            <typeparam name="T">Owner of the state</typeparam>
+            <param name="name">Name of the state</param>
+            <param name="value">Value to be stored</param>
+            <returns>true if succeed, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Runtime.StoredStates.Set``1(System.String,System.Int32)">
+            <summary>
+            Set value for stored state
+            </summary>
+            <typeparam name="T">Owner of the state</typeparam>
+            <param name="name">Name of the state</param>
+            <param name="value">Value to be stored</param>
+            <returns>true if succeed, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Runtime.StoredStates.Set``1(System.String,System.UInt32)">
+            <summary>
+            Set value for stored state
+            </summary>
+            <typeparam name="T">Owner of the state</typeparam>
+            <param name="name">Name of the state</param>
+            <param name="value">Value to be stored</param>
+            <returns>true if succeed, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Runtime.StoredStates.Set``1(System.String,System.Int64)">
+            <summary>
+            Set value for stored state
+            </summary>
+            <typeparam name="T">Owner of the state</typeparam>
+            <param name="name">Name of the state</param>
+            <param name="value">Value to be stored</param>
+            <returns>true if succeed, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Runtime.StoredStates.Set``1(System.String,System.UInt64)">
+            <summary>
+            Set value for stored state
+            </summary>
+            <typeparam name="T">Owner of the state</typeparam>
+            <param name="name">Name of the state</param>
+            <param name="value">Value to be stored</param>
+            <returns>true if succeed, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Runtime.StoredStates.Set``1(System.String,System.Single)">
+            <summary>
+            Set value for stored state
+            </summary>
+            <typeparam name="T">Owner of the state</typeparam>
+            <param name="name">Name of the state</param>
+            <param name="value">Value to be stored</param>
+            <returns>true if succeed, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Runtime.StoredStates.Set``1(System.String,System.Double)">
+            <summary>
+            Set value for stored state
+            </summary>
+            <typeparam name="T">Owner of the state</typeparam>
+            <param name="name">Name of the state</param>
+            <param name="value">Value to be stored</param>
+            <returns>true if succeed, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Runtime.StoredStates.Set``1(System.String,System.Decimal)">
+            <summary>
+            Set value for stored state
+            </summary>
+            <typeparam name="T">Owner of the state</typeparam>
+            <param name="name">Name of the state</param>
+            <param name="value">Value to be stored</param>
+            <returns>true if succeed, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Runtime.StoredStates.Set``1(System.String,System.DateTime)">
+            <summary>
+            Set value for stored state
+            </summary>
+            <typeparam name="T">Owner of the state</typeparam>
+            <param name="name">Name of the state</param>
+            <param name="value">Value to be stored</param>
+            <returns>true if succeed, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Runtime.StoredStates.Set``1(System.String,System.TimeSpan)">
+            <summary>
+            Set value for stored state
+            </summary>
+            <typeparam name="T">Owner of the state</typeparam>
+            <param name="name">Name of the state</param>
+            <param name="value">Value to be stored</param>
+            <returns>true if succeed, otherwise false</returns>
+        </member>
+        <member name="T:Shark.Utilities.GUIStaticConfiguratorInfo">
+            <summary>
+            Describes a configurator for SharkGUI
+            </summary>
+        </member>
+        <member name="P:Shark.Utilities.GUIStaticConfiguratorInfo.Configurator">
+            <summary>
+            Type of the configurator
+            </summary>
+        </member>
+        <member name="P:Shark.Utilities.GUIStaticConfiguratorInfo.Category">
+            <summary>
+            Configurator's Category
+            </summary>
+        </member>
+        <member name="P:Shark.Utilities.GUIStaticConfiguratorInfo.Description">
+            <summary>
+            Configurator's description
+            </summary>
+        </member>
+        <member name="P:Shark.Utilities.GUIStaticConfiguratorInfo.DisplayName">
+            <summary>
+            Configurator's name
+            </summary>
+        </member>
+        <member name="M:Shark.Utilities.GUIStaticConfiguratorInfo.#ctor(System.Type,System.String,System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="configurator">Type of the configurator</param>
+            <param name="category">Configurator's category</param>
+            <param name="description">Information about the configurator</param>
+            <param name="displayName">Configurator's display name</param>
+        </member>
+        <member name="T:Shark.Utilities.GUIStaticConfiguratorAttribute">
+            <summary>
+            Register a type as a static configurator for SharkGUI
+            </summary>
+        </member>
+        <member name="M:Shark.Utilities.GUIStaticConfiguratorAttribute.#ctor(System.Type)">
+            <summary>
+            Register a type as a static configurator for SharkGUI
+            </summary>
+            <param name="type">Type of configurator</param>
+        </member>
+        <member name="M:Shark.Utilities.GUIStaticConfiguratorAttribute.#ctor(System.Type,System.String,System.String,System.String)">
+            <summary>
+            Register a type as a static configurator for SharkGUI
+            </summary>
+            <param name="type">Type ofconfigurator</param>
+            <param name="category">Category of the configurator</param>
+            <param name="displayName">Display name of the configurator</param>
+            <param name="description">Information about the configurator</param>
+        </member>
+        <member name="T:Shark.Utilities.GUIStaticConfigurators">
+            <summary>
+            Provides information about static configurators for SharkGUI
+            </summary>
+        </member>
+        <member name="P:Shark.Utilities.GUIStaticConfigurators.All">
+            <summary>
+            List of all registered static configurators
+            </summary>
+        </member>
+        <member name="M:Shark.Utilities.GUIStaticConfigurators.Register(System.Type)">
+            <summary>
+            Register a type as <see cref="T:Shark.Utilities.GUIStaticConfiguratorInfo"/>.
+            This method will use <see cref="T:Shark.Utilities.GUISupportAttribute"/> attribute of the type to fill up <see cref="T:Shark.Utilities.GUIStaticConfiguratorInfo"/>'s information.
+            In case the type does not have <see cref="T:Shark.Utilities.GUISupportAttribute"/> attribute, default information will be generated.
+            </summary>
+            <param name="type">Type to be registered</param>
+            <returns>true if type is registered, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Utilities.GUIStaticConfigurators.Register(System.Type,System.String,System.String,System.String)">
+            <summary>
+            Register a type as <see cref="T:Shark.Utilities.GUIStaticConfiguratorInfo"/>
+            </summary>
+            <param name="type">Type to be registered</param>
+            <param name="category">Category of the configurator</param>
+            <param name="displayName">Display name of the configurator</param>
+            <param name="description">Information about the configurator</param>
+            <returns></returns>
+        </member>
+        <member name="T:Shark.Utilities.Log`1">
+            <summary>
+            Generic Log class, allows types to generate their own logs.
+            </summary>
+            <typeparam name="T">Type, which Related to the log</typeparam>
+        </member>
+        <member name="M:Shark.Utilities.Log`1.Information(System.String[])">
+            <summary>
+            Log an information which should be noticed but does not make any problems.
+            </summary>
+            <param name="messages">Log messages</param>
+            <returns>True if log is written successfully to log directory, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Utilities.Log`1.Information(System.Int32,System.String[])">
+            <summary>
+            Log an information which should be noticed but does not make any problems.
+            </summary>
+            <param name="skipTrace">Number of trace to be skipped</param>
+            <param name="messages">Log messages</param>
+            <returns>True if log is written successfully to log directory, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Utilities.Log`1.Warning(System.String[])">
+            <summary>
+            Log a warning which should be noticed and may make some kind of problems.
+            </summary>
+            <param name="messages">Log messages</param>
+            <returns>True if log is written successfully to log directory, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Utilities.Log`1.Warning(System.Int32,System.String[])">
+            <summary>
+            Log a warning which should be noticed and may make some kind of problems.
+            </summary>
+            <param name="skipTrace">Number of trace to be skipped</param>
+            <param name="messages">Log messages</param>
+            <returns>True if log is written successfully to log directory, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Utilities.Log`1.Error(System.String[])">
+            <summary>
+            Log an error which should be problematic.
+            </summary>
+            <param name="messages">Log messages</param>
+            <returns>True if log is written successfully to log directory, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Utilities.Log`1.Error(System.Int32,System.String[])">
+            <summary>
+            Log an error which should be problematic.
+            </summary>
+            <param name="skipTrace">Number of trace to be skipped</param>
+            <param name="messages">Log messages</param>
+            <returns>True if log is written successfully to log directory, otherwise false</returns>
+        </member>
+        <member name="T:Shark.Utilities.LogTypes">
+            <summary>
+            Describes log's types supported by Shark Framework
+            </summary>
+        </member>
+        <member name="F:Shark.Utilities.LogTypes.Unknown">
+            <summary>
+            Not supported type of log
+            </summary>
+        </member>
+        <member name="F:Shark.Utilities.LogTypes.Error">
+            <summary>
+            Error log
+            </summary>
+        </member>
+        <member name="F:Shark.Utilities.LogTypes.Warning">
+            <summary>
+            Warning log
+            </summary>
+        </member>
+        <member name="F:Shark.Utilities.LogTypes.Information">
+            <summary>
+            Information log
+            </summary>
+        </member>
+        <member name="T:Shark.Utilities.GUIEditorTypes">
+            <summary>
+            Describes supporting editor's types of SharkGUI
+            </summary>
+        </member>
+        <member name="F:Shark.Utilities.GUIEditorTypes.Default">
+            <summary>
+            Default editor, which is depended on property's type
+            </summary>
+        </member>
+        <member name="F:Shark.Utilities.GUIEditorTypes.FolderName">
+            <summary>
+            Folder's name editor
+            </summary>
+        </member>
+        <member name="F:Shark.Utilities.GUIEditorTypes.FileName">
+            <summary>
+            File's name editor
+            </summary>
+        </member>
+        <member name="T:Shark.Utilities.GUISupportAttribute">
+            <summary>
+            Provides supportive information for SharkGUI
+            </summary>
+        </member>
+        <member name="P:Shark.Utilities.GUISupportAttribute.Category">
+            <summary>
+            Category of property
+            </summary>
+        </member>
+        <member name="P:Shark.Utilities.GUISupportAttribute.DisplayName">
+            <summary>
+            Display name of property
+            </summary>
+        </member>
+        <member name="P:Shark.Utilities.GUISupportAttribute.Description">
+            <summary>
+            Description of property
+            </summary>
+        </member>
+        <member name="P:Shark.Utilities.GUISupportAttribute.EditorType">
+            <summary>
+            Editor type of property
+            </summary>
+        </member>
+        <member name="M:Shark.Utilities.GUISupportAttribute.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Provides supportive information for SharkGUI
+            </summary>
+            <param name="category">Category of property</param>
+            <param name="displayName">Display name of property</param>
+            <param name="description">Description of property</param>
+        </member>
+        <member name="M:Shark.Utilities.GUISupportAttribute.#ctor(System.String,System.String,System.String,Shark.Utilities.GUIEditorTypes)">
+            <summary>
+            Provides supportive information for SharkGUI
+            </summary>
+            <param name="category">Category of property</param>
+            <param name="displayName">Display name of property</param>
+            <param name="description">Description of property</param>
+            <param name="editorType">Type of editor used to edit property's value</param>
+        </member>
+        <member name="T:Shark.Task">
+            <summary>
+            Define a repeatable task using by <see cref="T:Shark.Worker"/>
+            </summary>
+            <param name="state">states passed to the task</param>
+        </member>
+        <member name="T:Shark.Worker">
+            <summary>
+            Base class, provides multiple threading environment for its derivered classes
+            </summary>
+        </member>
+        <member name="P:Shark.Worker.IsRunning">
+            <summary>
+            Indicates whether current worker has processing tasks
+            </summary>
+        </member>
+        <member name="P:Shark.Worker.IsStopping">
+            <summary>
+            Indicates whether current worker is in stopping process
+            </summary>
+        </member>
+        <member name="P:Shark.Worker.TaskCount">
+            <summary>
+            Number of registered and working tasks of current worker
+            </summary>
+        </member>
+        <member name="M:Shark.Worker.#ctor">
+            <summary>
+            Create a worker
+            </summary>
+        </member>
+        <member name="M:Shark.Worker.RegisterTask(Shark.Task,System.Object,System.Boolean)">
+            <summary>
+            Register a task to current worker
+            </summary>
+            <param name="task">Task to be registered</param>
+            <param name="state">State to be passed to the task</param>
+            <param name="isRepeating">Indicates whether task will be proceed repeatedly</param>
+        </member>
+        <member name="M:Shark.Worker.Start">
+            <summary>
+            Starts current worker if it is not started
+            </summary>
+        </member>
+        <member name="M:Shark.Worker.Stop">
+            <summary>
+            Stops current worker if it is not stopped
+            </summary>
+        </member>
+        <member name="M:Shark.Worker.Initialise">
+            <summary>
+            Invoked automatically when worker is in starting process and before startup operation.
+            This method is designed for worker to register tasks.
+            </summary>
+        </member>
+        <member name="M:Shark.Worker.Startup">
+            <summary>
+            Invoked automatically before any of worker's tasks is started and after initialization operation.
+            This method is designed for worker to allocate resources.
+            </summary>
+        </member>
+        <member name="M:Shark.Worker.Shutdown">
+            <summary>
+            Invoked autoatically after all of worker's tasks are stopped.
+            This method is designed for worker to release resources.
+            </summary>
+        </member>
+        <member name="T:Shark.Components.InvalidServiceDataException">
+            <summary>
+            Exception raises when trying to pass wrong type of data to a Shark Service to process.
+            </summary>
+        </member>
+        <member name="P:Shark.Components.InvalidServiceDataException.DataType">
+            <summary>
+            Type of data, Related to the exception
+            </summary>
+        </member>
+        <member name="M:Shark.Components.InvalidServiceDataException.#ctor(Shark.Components.ServiceDataTypes)">
+            <summary>
+            Construct an instance of InvalidServiceDataException
+            </summary>
+            <param name="type">Type of data, Related to the exception</param>
+        </member>
+        <member name="M:Shark.Components.InvalidServiceDataException.#ctor(Shark.Components.ServiceDataTypes,System.String)">
+            <summary>
+            Construct an instance of InvalidServiceDataException
+            </summary>
+            <param name="type">Type of data, Related to the exception</param>
+            <param name="message">Information about the exception</param>
+        </member>
+        <member name="M:Shark.Components.InvalidServiceDataException.#ctor(Shark.Components.ServiceDataTypes,System.String,System.Exception)">
+            <summary>
+            Construct an instance of InvalidServiceDataException
+            </summary>
+            <param name="type">Type of data, Related to the exception</param>
+            <param name="message">Information about the exception</param>
+            <param name="innerException">Exception which leads to current exception</param>
+        </member>
+        <member name="T:Shark.Components.IAutomation">
+            <summary>
+            Describes an automation
+            </summary>
+            <remarks>A class must implement this interface in order to work as Shark's automation</remarks>
+        </member>
+        <member name="P:Shark.Components.IAutomation.IsRunning">
+            <summary>
+            Indicate running state of Shark Automation
+            </summary>
+        </member>
+        <member name="M:Shark.Components.IAutomation.Start">
+            <summary>
+            Start Shark Automation
+            </summary>
+        </member>
+        <member name="M:Shark.Components.IAutomation.Stop">
+            <summary>
+            Stop Shark Automation
+            </summary>
+        </member>
+        <member name="T:Shark.Components.NotProcessedServiceException">
+            <summary>
+            Exception raise when a service refuse to process a request
+            </summary>
+        </member>
+        <member name="M:Shark.Components.NotProcessedServiceException.#ctor">
+            <summary>
+            Construct an instance of NotProcessedServiceException
+            </summary>
+        </member>
+        <member name="M:Shark.Components.NotProcessedServiceException.#ctor(System.String)">
+            <summary>
+            Construct an instance of NotProcessedServiceException
+            </summary>
+            <param name="message">Information about the exception</param>
+        </member>
+        <member name="M:Shark.Components.NotProcessedServiceException.#ctor(System.String,System.Exception)">
+            <summary>
+            Construct an instance of NotProcessedServiceException
+            </summary>
+            <param name="message">Information about the exception</param>
+            <param name="innerException">Exception which leads to current exception</param>
+        </member>
+        <member name="T:Shark.Components.ServiceDataTypes">
+            <summary>
+            Define data type using on service's processing process
+            </summary>
+        </member>
+        <member name="F:Shark.Components.ServiceDataTypes.Unknown">
+            <summary>
+            Undefined data type
+            </summary>
+        </member>
+        <member name="F:Shark.Components.ServiceDataTypes.RequestData">
+            <summary>
+            Data type use to request services
+            </summary>
+        </member>
+        <member name="F:Shark.Components.ServiceDataTypes.ResponseData">
+            <summary>
+            Data type serivce return after processed a request
+            </summary>
+        </member>
+        <member name="T:Shark.Components.ServiceRequestInfo">
+            <summary>
+            Base class of service request information. Instance of this class and its delivered classes will be used to pass information to services to process.
+            </summary>
+        </member>
+        <member name="T:Shark.Components.ServiceRequestInfo`1">
+            <summary>
+            Generic class provides requqest information for services. All request information pass to service to process must be an instance of this class or its delivered classes.
+            </summary>
+            <typeparam name="T">Type of data contained in request information</typeparam>
+        </member>
+        <member name="P:Shark.Components.ServiceRequestInfo`1.Data">
+            <summary>
+            Data of request
+            </summary>
+        </member>
+        <member name="M:Shark.Components.ServiceRequestInfo`1.#ctor(`0)">
+            <summary>
+            Create an instance of service request information
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:Shark.Components.SharkAutomationAttribute">
+            <summary>
+            Register Automation with Shark Framework.
+            </summary>
+        </member>
+        <member name="M:Shark.Components.SharkAutomationAttribute.#ctor(System.Type)">
+            <summary>
+            Register Automation with Shark Framework.
+            </summary>
+            <param name="automationType">Type, implemented IAutomation interface</param>
+        </member>
+        <member name="T:Shark.Components.SharkComponentAttribute">
+            <summary>
+            Register component with Shark Framework
+            </summary>
+            <remarks>This is a base class for any Shark Component Registration Attribute, which will do the automatic scanning and registering for all Shark Components. All Shark Component Registration Attributes must be delivered from this class.</remarks>
+        </member>
+        <member name="M:Shark.Components.SharkComponentAttribute.#ctor">
+            <summary>
+            Constuct an instance of SharkComponentAttribute
+            </summary>
+        </member>
+        <member name="T:Shark.Components.ServiceHandler`2">
+            <summary>
+            Base class of Shark Service Handler. All Shark Service Handler must be delivered from this class
+            </summary>
+            <typeparam name="TData">Type of data which could be processed by the service handler</typeparam>
+            <typeparam name="TReturn">Type of data which will be returned by the service handler</typeparam>
+        </member>
+        <member name="M:Shark.Components.ServiceHandler`2.Process(Shark.Components.ServiceRequestInfo)">
+            <summary>
+            Process provided data.
+            </summary>
+            <param name="info">Information which is needed to be processed</param>
+            <returns>Result of service's data processing</returns>
+            <exception cref="T:Shark.Components.InvalidServiceDataException"></exception>
+            <exception cref="T:Shark.Components.ServiceException"></exception>
+        </member>
+        <member name="P:Shark.Components.ServiceHandler`2.DataType">
+            <summary>
+            Service processible data type
+            </summary>
+        </member>
+        <member name="P:Shark.Components.ServiceHandler`2.ReturnType">
+            <summary>
+            Service return data type
+            </summary>
+        </member>
+        <member name="M:Shark.Components.ServiceHandler`2.Process(Shark.Components.ServiceRequestInfo{`0})">
+            <summary>
+            Process provided data.
+            </summary>
+            <param name="info">Information which is needed to be processed</param>
+            <returns>Result of service's data processing</returns>
+        </member>
+        <member name="T:Shark.Components.SharkServiceAttribute">
+            <summary>
+            Register Service with Shark Framework
+            </summary>
+        </member>
+        <member name="P:Shark.Components.SharkServiceAttribute.ServiceRegisteredID">
+            <summary>
+            Unique identifier of the registered service
+            </summary>
+        </member>
+        <member name="M:Shark.Components.SharkServiceAttribute.#ctor(System.String,System.Type)">
+            <summary>
+            Register Service with Shark Framework
+            </summary>
+            <param name="name">Name of the service</param>
+            <param name="handler">Type which implements service handler, this type must be delivered from Shark.Components.SharkServiceHandler</param>
+        </member>
+        <member name="T:Shark.Components.ServiceException">
+            <summary>
+            Exception raise when a registered Shark Service could not process a request fully
+            </summary>
+        </member>
+        <member name="T:Shark.OnLoggedHandler">
+            <summary>
+            Delegate of OnLogged event of Shark.Log
+            </summary>
+            <param name="topic">Log's topic</param>
+            <param name="trace">Calling method of the log</param>
+            <param name="type">Log's type</param>
+            <param name="message">Log's information</param>
+        </member>
+        <member name="T:Shark.Framework">
+            <summary>
+            Controller of Shark Framework.
+            </summary>    
+        </member>
+        <member name="E:Shark.Framework.OnLogged">
+            <summary>
+            Event raise whenever a log is written using Shark's Log System
+            </summary>
+        </member>
+        <member name="P:Shark.Framework.IsRequestingToBeRestarted">
+            <summary>
+            Indicates whether Framework is requesting the application to be restarted
+            </summary>
+        </member>
+        <member name="P:Shark.Framework.LogDirectory">
+            <summary>
+            Directory where Shark Framework will store logs
+            </summary>
+        </member>
+        <member name="P:Shark.Framework.ModuleDirectory">
+            <summary>
+            Directory where Shark Framework will looking for module dlls
+            </summary>
+        </member>
+        <member name="P:Shark.Framework.BaseDirectory">
+            <summary>
+            Directory where application default assembly resolver uses to probe for assemblies.
+            </summary>
+        </member>
+        <member name="P:Shark.Framework.DataDirectory">
+            <summary>
+            Directory where Shark Framework will store its data.
+            </summary>
+        </member>
+        <member name="P:Shark.Framework.LogEnabled">
+            <summary>
+            Indicates whether logs is allowed
+            </summary>
+        </member>
+        <member name="P:Shark.Framework.WriteLogsToFiles">
+            <summary>
+            Indicates whether logs will be written to file
+            </summary>
+        </member>
+        <member name="P:Shark.Framework.AutoLoadComponents">
+            <summary>
+            Indicates wherether Shark Framework should automatically load Shark Components from loaded assemblies or not
+            </summary>
+            <remarks>If this property is set to false before <see cref="M:Shark.Framework.Start"/> is called, Shark Framework will not load modules resided in module directory</remarks>
+        </member>
+        <member name="P:Shark.Framework.IsRunning">
+            <summary>
+            Shows current state of Shark Framework.
+            </summary>
+        </member>
+        <member name="M:Shark.Framework.Start">
+            <summary>
+            Starts Shark Framework, loading all dlls in module directory, searching for any registered Shark Component in all loaded dlls and register it to Shark Framework.
+            </summary>
+        </member>
+        <member name="M:Shark.Framework.Stop">
+            <summary>
+            Stops Shark Framework, this method will only stop Registered Shark Automations. Shark Services could still be accessible after the System is stopped, unless the application exited.
+            </summary>
+        </member>
+        <member name="M:Shark.Framework.RegisterModule(System.String)">
+            <summary>
+            Register a custom module to Shark Framework
+            </summary>
+            <param name="path">Path to module file</param>
+            <returns>True if module is reqirested, otherwise false</returns>
+            <remarks>If <see cref="P:Shark.Framework.AutoLoadComponents"/> set to false, registered module will not be loaded until <see cref="M:Shark.Framework.LoadRegisteredModules"/> is called</remarks>
+        </member>
+        <member name="M:Shark.Framework.LoadRegisteredModules">
+            <summary>
+            Load all modules, registered using <see cref="M:Shark.Framework.RegisterModule(System.String)"></see> and clear registered module cache/>
+            </summary>
+            <returns>True if succeed, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Framework.IsLoaded(System.String)">
+            <summary>
+            Indicates whether an assembly is loaded
+            </summary>
+            <param name="assemblyFile">Path to assembly file</param>
+            <returns>true if the file is loaded, otherwise false</returns>
+        </member>
+        <member name="T:Shark.Workers">
+            <summary>
+            Shark Worker Manager
+            </summary>
+            <remarks>
+            This class provides acces to instantiated workers
+            </remarks>
+        </member>
+        <member name="P:Shark.Workers.All">
+            <summary>
+            Get all instantiated workers
+            </summary>
+        </member>
+        <member name="P:Shark.Workers.RunningWorkers">
+            <summary>
+            Get all running workers
+            </summary>
+        </member>
+        <member name="P:Shark.Workers.StopTimeout">
+            <summary>
+            Waiting time before tasks are forced to stop after <see cref="!:Shark.Components.Worker"/> are stopped (in milliseconds)
+            </summary>
+        </member>
+        <member name="P:Shark.Workers.TaskSleepInterval">
+            <summary>
+            Witing time between tasks' calls
+            </summary>
+        </member>
+        <member name="P:Shark.Workers.HasRunningWorker">
+            <summary>
+            Indicates whether 
+            </summary>
+        </member>
+        <member name="P:Shark.Workers.RunningWorkerCount">
+            <summary>
+            Number of currently running workers
+            </summary>
+        </member>
+        <member name="T:Shark.OnResponseHandler`1">
+            <summary>
+            Handle service response asynchronously (deprecated)
+            </summary>
+            <typeparam name="T">Service's response type</typeparam>
+            <param name="response">response returned by service</param>
+            <param name="error">Error while service is processing</param>
+            <remarks>This delegate is deprecated</remarks>
+        </member>
+        <member name="T:Shark.OnSimpleResponseHandler`1">
+            <summary>
+            Handle service's response asynchronously (deprecated)
+            </summary>
+            <typeparam name="T">Service's response type</typeparam>
+            <param name="response">response returned by service</param>
+            <remarks>This delegate is deprecated</remarks>
+        </member>
+        <member name="T:Shark.ServiceASyncCallback`1">
+            <summary>
+            Handle service response asynchronously
+            </summary>
+            <typeparam name="T">Service's response type</typeparam>
+            <param name="response">response returned by service</param>
+            <param name="state">Object passed by service's invoker</param>
+            <param name="error">Error while service is processing</param>
+            <remarks>This delegate is deprecated</remarks>
+        </member>
+        <member name="T:Shark.Service">
+            <summary>
+            This class provides access to registered Shark Services.
+            </summary>
+        </member>
+        <member name="M:Shark.Service.Is``1">
+            <summary>
+            Test if current service handler is implemented a specified type or interface
+            </summary>
+            <typeparam name="T">Type or interface, used to test</typeparam>
+            <returns>True means service implemented testing type of interface, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Service.Is(System.Type)">
+            <summary>
+            Test if current service handler is implemented a specified type
+            </summary>
+            <param name="T">Type or interface, used to test</param>
+            <returns>True means service implemented testing type of interface, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Service.As``1">
+            <summary>
+            Cast current service handler as a specified type
+            </summary>
+            <typeparam name="T">Type, to which service's handler will be cast</typeparam>
+            <returns>Service handler as required type</returns>
+        </member>
+        <member name="P:Shark.Service.HandlerType">
+            <summary>
+            Type of registered service's handler.
+            </summary>
+        </member>
+        <member name="P:Shark.Service.DataType">
+            <summary>
+            Type of data used as parameter by registered service.
+            </summary>
+        </member>
+        <member name="P:Shark.Service.ReturnType">
+            <summary>
+            Type of data, returned by service if it is called successfully.
+            </summary>
+        </member>
+        <member name="P:Shark.Service.Name">
+            <summary>
+            Name of registered service.
+            </summary>
+        </member>
+        <member name="P:Shark.Service.ID">
+            <summary>
+            Unique Identifier of registered service.
+            </summary>
+        </member>
+        <member name="M:Shark.Service.Process(Shark.Components.ServiceRequestInfo)">
+            <summary>
+            Request service to process
+            </summary>
+            <param name="info">object contains request's information</param>
+            <returns>result generated by service after processed request</returns>
+            <exception cref="T:Shark.Components.InvalidServiceDataException"></exception>
+            <exception cref="T:Shark.Components.ServiceException"></exception>
+        </member>
+        <member name="M:Shark.Service.Process``1(Shark.Components.ServiceRequestInfo)">
+            <summary>
+            Request service to process and return data of specified type
+            </summary>
+            <typeparam name="TReturn">type of return data</typeparam>
+            <param name="info">object contains requet's information</param>
+            <returns>result generated by service and conveted to requested type</returns>
+        </member>
+        <member name="M:Shark.Service.ProcessASync``1(Shark.Components.ServiceRequestInfo,Shark.ServiceASyncCallback{``0},System.Object)">
+            <summary>
+            Request service to process asynchronously
+            </summary>
+            <typeparam name="TReturn">Type of return data</typeparam>
+            <param name="info">object contains request's information</param>
+            <param name="handler">Callback, called when service processing is done</param>
+            <param name="state">Object to be passed to callback</param>
+        </member>
+        <member name="T:Shark.SimplifiedServiceASyncCallback`1">
+            <summary>
+            Handle service's response asynchronously
+            </summary>
+            <typeparam name="T">Service's response type</typeparam>
+            <param name="response">Response returned by service</param>
+            <param name="state">Object passed by service's invoker</param>
+        </member>
+        <member name="T:Shark.ServiceQueueCallback">
+            <summary>
+            Handle queued service's response asynchronously
+            </summary>
+            <param name="response">Response returned by service</param>
+            <param name="state">Object passed by service's invoker</param>
+            <param name="exception">Error while service is processing</param>
+        </member>
+        <member name="T:Shark.SimplifiedServiceQueueCallback">
+            <summary>
+            Handle queued service's response asynchronously
+            </summary>
+            <param name="response">Response returned by service</param>
+            <param name="state">Object passed by service's invoker</param>
+        </member>
+        <member name="T:Shark.Services">
+            <summary>
+            Shark Service Manager. This class provides access to registered Shark Services and allows custom service registration.
+            </summary>
+        </member>
+        <member name="M:Shark.Services.#ctor">
+            <summary>
+            Contruct instance of <see cref="T:Shark.Services"/>. This method is designed to be invoked by Shark Framework only
+            </summary>
+        </member>
+        <member name="M:Shark.Services.Initialise">
+            <summary>
+            Initialise tasks
+            </summary>
+        </member>
+        <member name="M:Shark.Services.Process``2(System.String,Shark.Components.ServiceRequestInfo{``0},``1)">
+            <summary>
+            Process registered Shark Service
+            </summary>
+            <typeparam name="TData">Data type of registered service</typeparam>
+            <typeparam name="TResult">Return type of regstered service</typeparam>
+            <param name="serviceName">Name of requested service</param>
+            <param name="data">Request data, needed to be processed</param>
+            <param name="onFailed">Value returned if failed to request</param>
+            <returns>Result of service data processing or onFail if request could not be processed</returns>
+        </member>
+        <member name="M:Shark.Services.Process``2(System.String,``0,``1)">
+            <summary>
+            Process registered Shark Service
+            </summary>
+            <typeparam name="TData">Data type of registered service</typeparam>
+            <typeparam name="TResult">Return type of regstered service</typeparam>
+            <param name="serviceName">Name of requested service</param>
+            <param name="data">Request data, needed to be processed</param>
+            <param name="onFailed">Value returned if failed to request</param>
+            <returns>Result of service data processing or onFail if request could not be processed</returns>
+        </member>
+        <member name="M:Shark.Services.ProcessASync``2(System.String,Shark.Components.ServiceRequestInfo{``0},``1,Shark.SimplifiedServiceASyncCallback{``1},System.Object)">
+            <summary>
+            Process registered Shark Service asynchronously
+            </summary>
+            <typeparam name="TData">Data type of registered service</typeparam>
+            <typeparam name="TResult">Return type of regstered service</typeparam>
+            <param name="serviceName">Name of requested service</param>
+            <param name="data">Request data, needed to be processed</param>
+            <param name="onFailed">Value returned if failed to request</param>
+            <param name="handler">Callback, called when service processing is done</param>
+            <param name="state">Object to be passed to callback</param>
+        </member>
+        <member name="M:Shark.Services.ProcessASync``2(System.String,``0,``1,Shark.SimplifiedServiceASyncCallback{``1},System.Object)">
+            <summary>
+            Process registered Shark Service asynchronously
+            </summary>
+            <typeparam name="TData">Data type of registered service</typeparam>
+            <typeparam name="TResult">Return type of regstered service</typeparam>
+            <param name="serviceName">Name of requested service</param>
+            <param name="data">Request data, needed to be processed</param>
+            <param name="onFailed">Value returned if failed to request</param>
+            <param name="handler">Callback, called when service processing is done</param>
+            <param name="state">Object to be passed to callback</param>
+        </member>
+        <member name="M:Shark.Services.Queue``2(System.String,System.String,Shark.Components.ServiceRequestInfo{``0},``1,Shark.SimplifiedServiceQueueCallback,System.Object)">
+            <summary>
+            Queue registered Shark Service to process
+            </summary>
+            <typeparam name="TData">Data type of registered service</typeparam>
+            <typeparam name="TResult">Return type of regstered service</typeparam>
+            <param name="serviceName">Name of requested service</param>
+            <param name="identifier">Identifier, used to distinguish service on queue in order to make sure the service will not be queued multiple times</param>
+            <param name="data">Request data, needed to be processed</param>
+            <param name="onFailed">Value returned if failed to request</param>
+            <param name="handler">Callback, called when service processing is done</param>
+            <param name="state">Object to be passed to callback</param>
+            <returns>true if service is queued, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Services.Queue``2(System.String,System.String,``0,``1,Shark.SimplifiedServiceQueueCallback,System.Object)">
+            <summary>
+            Queue registered Shark Service to process
+            </summary>
+            <typeparam name="TData">Data type of registered service</typeparam>
+            <typeparam name="TResult">Return type of regstered service</typeparam>
+            <param name="serviceName">Name of requested service</param>
+            <param name="identifier">Identifier, used to distinguish service on queue in order to make sure the service will not be queued multiple times</param>
+            <param name="data">Request data, needed to be processed</param>
+            <param name="onFailed">Value returned if failed to request</param>
+            <param name="handler">Callback, called when service processing is done</param>
+            <param name="state">Object to be passed to callback</param>
+            <returns>true if service is queued, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Services.Queue``2(System.String,Shark.Components.ServiceRequestInfo{``0},``1,Shark.SimplifiedServiceQueueCallback,System.Object)">
+            <summary>
+            Queue registered Shark Service to process
+            </summary>
+            <typeparam name="TData">Data type of registered service</typeparam>
+            <typeparam name="TResult">Return type of regstered service</typeparam>
+            <param name="serviceName">Name of requested service</param>
+            <param name="data">Request data, needed to be processed</param>
+            <param name="onFailed">Value returned if failed to request</param>
+            <param name="handler">Callback, called when service processing is done</param>
+            <param name="state">Object to be passed to callback</param>
+            <returns>true if service is queued, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Services.Queue``2(System.String,``0,``1,Shark.SimplifiedServiceQueueCallback,System.Object)">
+            <summary>
+            Queue registered Shark Service to process
+            </summary>
+            <typeparam name="TData">Data type of registered service</typeparam>
+            <typeparam name="TResult">Return type of regstered service</typeparam>
+            <param name="serviceName">Name of requested service</param>
+            <param name="data">Request data, needed to be processed</param>
+            <param name="onFailed">Value returned if failed to request</param>
+            <param name="handler">Callback, called when service processing is done</param>
+            <param name="state">Object to be passed to callback</param>
+            <returns>true if service is queued, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Services.Queue``2(System.String,System.String,Shark.Components.ServiceRequestInfo{``0},``1,Shark.ServiceQueueCallback,System.Object)">
+            <summary>
+            Queue registered Shark Service to process
+            </summary>
+            <typeparam name="TData">Data type of registered service</typeparam>
+            <typeparam name="TResult">Return type of regstered service</typeparam>
+            <param name="serviceName">Name of requested service</param>
+            <param name="identifier">Identifier, used to distinguish service on queue in order to make sure the service will not be queued multiple times</param>
+            <param name="data">Request data, needed to be processed</param>
+            <param name="onFailed">Value returned if failed to request</param>
+            <param name="handler">Callback, called when service processing is done</param>
+            <param name="state">Object to be passed to callback</param>
+            <returns>true if service is queued, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Services.Queue``2(System.String,System.String,``0,``1,Shark.ServiceQueueCallback,System.Object)">
+            <summary>
+            Queue registered Shark Service to process
+            </summary>
+            <typeparam name="TData">Data type of registered service</typeparam>
+            <typeparam name="TResult">Return type of regstered service</typeparam>
+            <param name="serviceName">Name of requested service</param>
+            <param name="identifier">Identifier, used to distinguish service on queue in order to make sure the service will not be queued multiple times</param>
+            <param name="data">Request data, needed to be processed</param>
+            <param name="onFailed">Value returned if failed to request</param>
+            <param name="handler">Callback, called when service processing is done</param>
+            <param name="state">Object to be passed to callback</param>
+            <returns>true if service is queued, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Services.Queue``2(System.String,Shark.Components.ServiceRequestInfo{``0},``1,Shark.ServiceQueueCallback,System.Object)">
+            <summary>
+            Queue registered Shark Service to process
+            </summary>
+            <typeparam name="TData">Data type of registered service</typeparam>
+            <typeparam name="TResult">Return type of regstered service</typeparam>
+            <param name="serviceName">Name of requested service</param>
+            <param name="data">Request data, needed to be processed</param>
+            <param name="onFailed">Value returned if failed to request</param>
+            <param name="handler">Callback, called when service processing is done</param>
+            <param name="state">Object to be passed to callback</param>
+            <returns>true if service is queued, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Services.Queue``2(System.String,``0,``1,Shark.ServiceQueueCallback,System.Object)">
+            <summary>
+            Queue registered Shark Service to process
+            </summary>
+            <typeparam name="TData">Data type of registered service</typeparam>
+            <typeparam name="TResult">Return type of regstered service</typeparam>
+            <param name="serviceName">Name of requested service</param>
+            <param name="data">Request data, needed to be processed</param>
+            <param name="onFailed">Value returned if failed to request</param>
+            <param name="handler">Callback, called when service processing is done</param>
+            <param name="state">Object to be passed to callback</param>
+            <returns>true if service is queued, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Services.Queue``2(System.String,``0,``1)">
+            <summary>
+            Queue registered Shark Service to process
+            </summary>
+            <typeparam name="TData">Data type of registered service</typeparam>
+            <typeparam name="TResult">Return type of regstered service</typeparam>
+            <param name="serviceName">Name of requested service</param>
+            <param name="data">Request data, needed to be processed</param>
+            <param name="onFailed">Value returned if failed to request</param>
+            <returns>true if service is queued, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Services.Queue``2(System.String,``0)">
+            <summary>
+            Queue registered Shark Service to process
+            </summary>
+            <typeparam name="TData">Data type of registered service</typeparam>
+            <typeparam name="TResult">Return type of regstered service</typeparam>
+            <param name="serviceName">Name of requested service</param>
+            <param name="data">Request data, needed to be processed</param>
+            <returns>true if service is queued, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Services.Queue``2(System.String,Shark.Components.ServiceRequestInfo{``0},``1)">
+            <summary>
+            Queue registered Shark Service to process
+            </summary>
+            <typeparam name="TData">Data type of registered service</typeparam>
+            <typeparam name="TResult">Return type of regstered service</typeparam>
+            <param name="serviceName">Name of requested service</param>
+            <param name="data">Request data, needed to be processed</param>
+            <param name="onFailed">Value returned if failed to request</param>
+            <returns>true if service is queued, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Services.Queue``2(System.String,Shark.Components.ServiceRequestInfo{``0})">
+            <summary>
+            Queue registered Shark Service to process
+            </summary>
+            <typeparam name="TData">Data type of registered service</typeparam>
+            <typeparam name="TResult">Return type of regstered service</typeparam>
+            <param name="serviceName">Name of requested service</param>
+            <param name="data">Request data, needed to be processed</param>
+            <returns>true if service is queued, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Services.Queue``2(System.String,System.String,``0,``1)">
+            <summary>
+            Queue registered Shark Service to process
+            </summary>
+            <typeparam name="TData">Data type of registered service</typeparam>
+            <typeparam name="TResult">Return type of regstered service</typeparam>
+            <param name="serviceName">Name of requested service</param>
+            <param name="identifier">Identifier, used to distinguish service on queue in order to make sure the service will not be queued multiple times</param>
+            <param name="data">Request data, needed to be processed</param>
+            <param name="onFailed">Value returned if failed to request</param>
+            <returns>true if service is queued, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Services.Queue``2(System.String,System.String,``0)">
+            <summary>
+            Queue registered Shark Service to process
+            </summary>
+            <typeparam name="TData">Data type of registered service</typeparam>
+            <typeparam name="TResult">Return type of regstered service</typeparam>
+            <param name="serviceName">Name of requested service</param>
+            <param name="identifier">Identifier, used to distinguish service on queue in order to make sure the service will not be queued multiple times</param>
+            <param name="data">Request data, needed to be processed</param>
+            <returns>true if service is queued, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Services.Queue``2(System.String,System.String,Shark.Components.ServiceRequestInfo{``0},``1)">
+            <summary>
+            Queue registered Shark Service to process
+            </summary>
+            <typeparam name="TData">Data type of registered service</typeparam>
+            <typeparam name="TResult">Return type of regstered service</typeparam>
+            <param name="serviceName">Name of requested service</param>
+            <param name="identifier">Identifier, used to distinguish service on queue in order to make sure the service will not be queued multiple times</param>
+            <param name="data">Request data, needed to be processed</param>
+            <param name="onFailed">Value returned if failed to request</param>
+            <returns>true if service is queued, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Services.Queue``2(System.String,System.String,Shark.Components.ServiceRequestInfo{``0})">
+            <summary>
+            Queue registered Shark Service to process
+            </summary>
+            <typeparam name="TData">Data type of registered service</typeparam>
+            <typeparam name="TResult">Return type of regstered service</typeparam>
+            <param name="serviceName">Name of requested service</param>
+            <param name="identifier">Identifier, used to distinguish service on queue in order to make sure the service will not be queued multiple times</param>
+            <param name="data">Request data, needed to be processed</param>
+            <returns>true if service is queued, otherwise false</returns>
+        </member>
+        <member name="M:Shark.Services.Register(System.String,System.Type)">
+            <summary>
+            Register type as Shark Service.
+            </summary>
+            <param name="name">Name, which together with registered data type will identify the service</param>
+            <param name="handler">Type of service's handler, must be delivered from SharkServiceHandler</param>
+            <returns>Positive integer which is unique identifier for the registered service if succeed, otherwise 0</returns>
+        </member>
+        <member name="M:Shark.Services.Get(System.Int32)">
+            <summary>
+            Get registered Shark Service using its unique identifier
+            </summary>
+            <param name="id">Registered service unique identifier</param>
+            <returns>Instance of <seealso cref="T:Shark.Service"/> if registered service with provided identifier existed, otherwise null</returns>
+        </member>
+        <member name="M:Shark.Services.Get(System.String,System.Type)">
+            <summary>
+            Get registered Shark Service using its registered name and data type
+            </summary>
+            <param name="name">Registered name of the service</param>
+            <param name="dataType">Registered data type of the service</param>
+            <returns>Instance of <seealso cref="T:Shark.Service"/> if registered service with provided identifier existed, otherwise null</returns>
+        </member>
+        <member name="M:Shark.Services.Get(System.String)">
+            <summary>
+            Get registered Shark Services using their registered name
+            </summary>
+            <param name="name">Registered name of the services</param>
+            <returns>Array of instances of <seealso cref="T:Shark.Service"/> if registered services with provided name existed, otherwise empty array</returns>
+        </member>
+        <member name="M:Shark.Services.Get``1(System.String)">
+            <summary>
+            Get registered Shark Service using its registered name and data type
+            </summary>
+            <typeparam name="DataType">Registered data type of the service</typeparam>
+            <param name="name">Registered name of the service</param>
+            <returns>Instance of <seealso cref="T:Shark.Service"/> if registered service with provided identifier existed, otherwise null</returns>
+        </member>
+        <member name="P:Shark.Services.All">
+            <summary>
+            Get all registered Shark Services
+            </summary>
+        </member>
+    </members>
+</doc>

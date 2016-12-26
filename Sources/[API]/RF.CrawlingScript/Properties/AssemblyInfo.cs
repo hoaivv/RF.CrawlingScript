@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("RF.CrawlingScript")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("RF Crawling Script")]
+[assembly: AssemblyDescription("Raving Fan Crawling Script")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Raving Fan Group")]
 [assembly: AssemblyProduct("RF.CrawlingScript")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("RF Crawling Script")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 

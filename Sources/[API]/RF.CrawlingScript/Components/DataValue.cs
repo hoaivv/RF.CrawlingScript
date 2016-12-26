@@ -7,7 +7,7 @@ using System;
 namespace RF.CrawlingScript.Components
 {
     /// <summary>
-    /// Describes a <see cref="byte[]"/> data in RFCScript
+    /// Describes a <see cref="byte"/> array data in RFCScript
     /// </summary>
     public class DataValue : DataExpression
     {

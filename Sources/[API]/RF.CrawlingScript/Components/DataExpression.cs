@@ -10,9 +10,9 @@ namespace RF.CrawlingScript.Components
     public abstract partial class DataExpression : Value<byte[]>, ISet
     {
         /// <summary>
-        /// Convert <see cref="byte[]"/> to <see cref="DataExpression"/>
+        /// Convert <see cref="byte"/> array to <see cref="DataExpression"/>
         /// </summary>
-        /// <param name="value"><see cref="byte[]"/> to be converted</param>
+        /// <param name="value"><see cref="byte"/> array to be converted</param>
         public static implicit operator DataExpression(byte[] value)
         {
             return new DataValue(value);
@@ -22,7 +22,7 @@ namespace RF.CrawlingScript.Components
         /// Gets the enumerator for records contained within the set. This method is designed to be invoked internally by RFCScript components only.
         /// </summary>
         /// <param name="context">Context, on which the script is running</param>
-        /// <param name="enumerator">Enumerator which could be used to access to records of the set</param>
+        /// <param name="result">Enumerator which could be used to access to records of the set</param>
         public void GetEnumerator(Context context, out IEnumerator result)
         {
             byte[] data; Evaluate(context, out data);

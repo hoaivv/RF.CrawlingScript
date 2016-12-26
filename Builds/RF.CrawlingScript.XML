@@ -1,0 +1,1004 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RF.CrawlingScript</name>
+    </assembly>
+    <members>
+        <member name="T:RF.CrawlingScript.block">
+            <summary>
+            describes a block of RFCScript code
+            </summary>
+        </member>
+        <member name="T:RF.CrawlingScript.Components.ContextDataValue">
+            <summary>
+            Describes a data passed on to executing script by its context
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextDataValue.#ctor">
+            <summary>
+            Construct an empty <see cref="T:RF.CrawlingScript.Components.ContextDataValue"/> expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextDataValue.#ctor(RF.CrawlingScript.Components.TextExpression)">
+            <summary>
+            Construct a <see cref="T:RF.CrawlingScript.Components.ContextDataValue"/> expression
+            </summary>
+            <param name="name">Name of the data passed on to executing script by its context</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextDataValue.Evaluate(RF.CrawlingScript.Context,System.Object@)">
+            <summary>
+            Evalutes the expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context on which the script is running</param>
+            <param name="result">Result of the expression evaluation</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextDataValue.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            Serialize <see cref="T:RF.CrawlingScript.Components.ContextDataValue"/> data to a specified output. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="output">Ouput, to which the component's data sould be written</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextDataValue.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            Deserialize <see cref="T:RF.CrawlingScript.Components.ContextDataValue"/> data from a specified input. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="input">Input, on which component's data is available to read</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextDataValue.DoCount(RF.CrawlingScript.Context,System.Int32@)">
+            <summary>
+            Gets the number of data records contained within the set. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context, on which the script is running</param>
+            <param name="result">Number of data records contained within the set</param>
+        </member>
+        <member name="T:RF.CrawlingScript.Components.ContextDictionaryValue">
+            <summary>
+            Describes a dictionary passed on to executing script by its context
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextDictionaryValue.#ctor">
+            <summary>
+            Construct an empty <see cref="T:RF.CrawlingScript.Components.ContextDictionaryValue"/> expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextDictionaryValue.#ctor(RF.CrawlingScript.Components.TextExpression)">
+            <summary>
+            Construct a <see cref="T:RF.CrawlingScript.Components.ContextDictionaryValue"/> expression
+            </summary>
+            <param name="name">Name of the data passed on to executing script by its context</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextDictionaryValue.Evaluate(RF.CrawlingScript.Context,System.Object@)">
+            <summary>
+            Evalutes the expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context on which the script is running</param>
+            <param name="result">Result of the expression evaluation</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextDictionaryValue.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            Serialize <see cref="T:RF.CrawlingScript.Components.ContextDictionaryValue"/> data to a specified output. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="output">Ouput, to which the component's data sould be written</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextDictionaryValue.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            Deserialize <see cref="T:RF.CrawlingScript.Components.ContextDictionaryValue"/> data from a specified input. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="input">Input, on which component's data is available to read</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextDictionaryValue.DoCount(RF.CrawlingScript.Context,System.Int32@)">
+            <summary>
+            Gets the number of data records contained within the set. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context, on which the script is running</param>
+            <param name="result">Number of data records contained within the set</param>
+        </member>
+        <member name="T:RF.CrawlingScript.Components.ContextLogicValue">
+            <summary>
+            Describes a logic value passed on to executing script by its context
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextLogicValue.#ctor">
+            <summary>
+            Construct an empty <see cref="T:RF.CrawlingScript.Components.ContextLogicValue"/> expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextLogicValue.#ctor(RF.CrawlingScript.Components.TextExpression)">
+            <summary>
+            Construct a <see cref="T:RF.CrawlingScript.Components.ContextLogicValue"/> expression
+            </summary>
+            <param name="name">Name of the data passed on to executing script by its context</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextLogicValue.Evaluate(RF.CrawlingScript.Context,System.Object@)">
+            <summary>
+            Evalutes the expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context on which the script is running</param>
+            <param name="result">Result of the expression evaluation</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextLogicValue.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            Serialize <see cref="T:RF.CrawlingScript.Components.ContextLogicValue"/> data to a specified output. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="output">Ouput, to which the component's data sould be written</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextLogicValue.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            Deserialize <see cref="T:RF.CrawlingScript.Components.ContextLogicValue"/> data from a specified input. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="input">Input, on which component's data is available to read</param>
+        </member>
+        <member name="T:RF.CrawlingScript.Components.ContextNumberValue">
+            <summary>
+            Describes a number value passed on to executing script by its context
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextNumberValue.#ctor">
+            <summary>
+            Construct an empty <see cref="T:RF.CrawlingScript.Components.ContextNumberValue"/> expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextNumberValue.#ctor(RF.CrawlingScript.Components.TextExpression)">
+            <summary>
+            Construct a <see cref="T:RF.CrawlingScript.Components.ContextNumberValue"/> expression
+            </summary>
+            <param name="name">Name of the data passed on to executing script by its context</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextNumberValue.Evaluate(RF.CrawlingScript.Context,System.Object@)">
+            <summary>
+            Evalutes the expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context on which the script is running</param>
+            <param name="result">Result of the expression evaluation</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextNumberValue.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            Serialize <see cref="T:RF.CrawlingScript.Components.ContextNumberValue"/> data to a specified output. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="output">Ouput, to which the component's data sould be written</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextNumberValue.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            Deserialize <see cref="T:RF.CrawlingScript.Components.ContextNumberValue"/> data from a specified input. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="input">Input, on which component's data is available to read</param>
+        </member>
+        <member name="T:RF.CrawlingScript.Components.ContextTextPairValue">
+            <summary>
+            Describes a text pair value passed on to executing script by its context
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextTextPairValue.#ctor">
+            <summary>
+            Construct an empty <see cref="T:RF.CrawlingScript.Components.ContextTextPairValue"/> expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextTextPairValue.#ctor(RF.CrawlingScript.Components.TextExpression)">
+            <summary>
+            Construct a <see cref="T:RF.CrawlingScript.Components.ContextTextPairValue"/> expression
+            </summary>
+            <param name="name">Name of the data passed on to executing script by its context</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextTextPairValue.Evaluate(RF.CrawlingScript.Context,System.Object@)">
+            <summary>
+            Evalutes the expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context on which the script is running</param>
+            <param name="result">Result of the expression evaluation</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextTextPairValue.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            Serialize <see cref="T:RF.CrawlingScript.Components.ContextTextPairValue"/> data to a specified output. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="output">Ouput, to which the component's data sould be written</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextTextPairValue.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            Deserialize <see cref="T:RF.CrawlingScript.Components.ContextTextPairValue"/> data from a specified input. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="input">Input, on which component's data is available to read</param>
+        </member>
+        <member name="T:RF.CrawlingScript.Components.ContextTextValue">
+            <summary>
+            Describes a text passed on to executing script by its context
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextTextValue.#ctor">
+            <summary>
+            Construct an empty <see cref="T:RF.CrawlingScript.Components.ContextTextValue"/> expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextTextValue.#ctor(RF.CrawlingScript.Components.TextExpression)">
+            <summary>
+            Construct a <see cref="T:RF.CrawlingScript.Components.ContextTextValue"/> expression
+            </summary>
+            <param name="name">Name of the data passed on to executing script by its context</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextTextValue.Evaluate(RF.CrawlingScript.Context,System.Object@)">
+            <summary>
+            Evalutes the expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context on which the script is running</param>
+            <param name="result">Result of the expression evaluation</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextTextValue.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            Serialize <see cref="T:RF.CrawlingScript.Components.ContextTextValue"/> data to a specified output. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="output">Ouput, to which the component's data sould be written</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.ContextTextValue.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            Deserialize <see cref="T:RF.CrawlingScript.Components.ContextTextValue"/> data from a specified input. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="input">Input, on which component's data is available to read</param>
+        </member>
+        <member name="T:RF.CrawlingScript.Components.DataExpression">
+            <summary>
+            Defines an expression which represent a set of byte
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DataExpression.op_Implicit(System.Byte[])~RF.CrawlingScript.Components.DataExpression">
+            <summary>
+            Convert <see cref="T:System.Byte"/> array to <see cref="T:RF.CrawlingScript.Components.DataExpression"/>
+            </summary>
+            <param name="value"><see cref="T:System.Byte"/> array to be converted</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DataExpression.GetEnumerator(RF.CrawlingScript.Context,System.Collections.IEnumerator@)">
+            <summary>
+            Gets the enumerator for records contained within the set. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context, on which the script is running</param>
+            <param name="result">Enumerator which could be used to access to records of the set</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DataExpression.Convert(System.Object)">
+            <summary>
+            Converts a record to <see cref="T:System.Byte"/> to be passed on in RFCScript. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="element">Raw data of a record</param>
+            <returns>data of type <see cref="T:System.Byte"/></returns>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DataExpression.DoCount(RF.CrawlingScript.Context,System.Int32@)">
+            <summary>
+            Gets the number of bytes contained within the set. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context, on which the script is running</param>
+            <param name="result">Number of data records contained within the set</param>
+        </member>
+        <member name="P:RF.CrawlingScript.Components.DataExpression.Item(System.Int32)">
+            <summary>
+            Get data at specified index of the set
+            </summary>
+            <param name="key">Index of the <see cref="T:RF.CrawlingScript.Components.NumberValue"/> to be get</param>
+            <returns>data at specified index of the set</returns>
+        </member>
+        <member name="P:RF.CrawlingScript.Components.DataExpression.Item(RF.CrawlingScript.Components.NumberExpression)">
+            <summary>
+            Get data at specified index of the set
+            </summary>
+            <param name="key">Index of the <see cref="T:RF.CrawlingScript.Components.NumberValue"/> to be get</param>
+            <returns>data at specified index of the set</returns>
+        </member>
+        <member name="P:RF.CrawlingScript.Components.DataExpression.Count">
+            <summary>
+            Get number of byte contained within the set
+            </summary>
+        </member>
+        <member name="T:RF.CrawlingScript.Components.DataExpressionValue">
+            <summary>
+            Describes a data at a speficied index of a <see cref="T:RF.CrawlingScript.Components.DataExpression"/>
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DataExpressionValue.#ctor">
+            <summary>
+            Construct an empty <see cref="T:RF.CrawlingScript.Components.DataExpressionValue"/> expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DataExpressionValue.#ctor(RF.CrawlingScript.Components.DataExpression,RF.CrawlingScript.Components.NumberExpression)">
+            <summary>
+            Construct a <see cref="T:RF.CrawlingScript.Components.DataExpressionValue"/> expression
+            </summary>
+            <param name="exp">Data expression, value of which would be extracted</param>
+            <param name="key">Index at with data would be extracted</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DataExpressionValue.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            Serialize <see cref="T:RF.CrawlingScript.Components.DataExpressionValue"/> data to a specified output. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="output">Ouput, to which the component's data sould be written</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DataExpressionValue.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            Deserialize <see cref="T:RF.CrawlingScript.Components.DataExpressionValue"/> data from a specified input. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="input">Input, on which component's data is available to read</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DataExpressionValue.Evaluate(RF.CrawlingScript.Context,System.Object@)">
+            <summary>
+            Evalutes the expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context on which the script is running</param>
+            <param name="result">Result of the expression evaluation</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DataExpressionValue.Set(RF.CrawlingScript.Context,System.Object)">
+            <summary>
+            Sets value for the variable. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context, on which the script is running</param>
+            <param name="value">Value to be set to the variable</param>
+        </member>
+        <member name="T:RF.CrawlingScript.Components.DataValue">
+            <summary>
+            Describes a <see cref="T:System.Byte"/> array data in RFCScript
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DataValue.#ctor">
+            <summary>
+            Construct an empty <see cref="T:RF.CrawlingScript.Components.DataValue"/> expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DataValue.#ctor(System.Byte[])">
+            <summary>
+            Constrct a <see cref="T:RF.CrawlingScript.Components.DataValue"/> expression
+            </summary>
+            <param name="value">Data to be represented by the expression</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DataValue.Evaluate(RF.CrawlingScript.Context,System.Object@)">
+            <summary>
+            Evalutes the expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context on which the script is running</param>
+            <param name="result">Result of the expression evaluation</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DataValue.DoCount(RF.CrawlingScript.Context,System.Int32@)">
+            <summary>
+            Gets the number of bytes contained within the set. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context, on which the script is running</param>
+            <param name="result">Number of data records contained within the set</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DataValue.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            Serialize <see cref="T:RF.CrawlingScript.Components.DataValue"/> data to a specified output. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="output">Ouput, to which the component's data sould be written</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DataValue.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            Deserialize <see cref="T:RF.CrawlingScript.Components.DataValue"/> data from a specified input. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="input">Input, on which component's data is available to read</param>
+        </member>
+        <member name="T:RF.CrawlingScript.Components.DataVariable">
+            <summary>
+            Describes a variable which represent a <see cref="T:System.Byte"/> array in RFCScript
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DataVariable.#ctor">
+            <summary>
+            Construct an empty <see cref="T:RF.CrawlingScript.Components.DataVariable"/> expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DataVariable.#ctor(System.Int32)">
+            <summary>
+            Construct a <see cref="T:RF.CrawlingScript.Components.DataVariable"/> expression.
+            </summary>
+            <param name="name">Variable's identifier</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DataVariable.DoCount(RF.CrawlingScript.Context,System.Int32@)">
+            <summary>
+            Gets the number of bytes contained within the set. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context, on which the script is running</param>
+            <param name="result">Number of data records contained within the set</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DataVariable.Set(RF.CrawlingScript.Context,System.Object)">
+            <summary>
+            Sets value for the variable. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context, on which the script is running</param>
+            <param name="value">Value to be set to the variable</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DataVariable.Evaluate(RF.CrawlingScript.Context,System.Object@)">
+            <summary>
+            Evalutes the expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context on which the script is running</param>
+            <param name="result">Result of the expression evaluation</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DataVariable.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            Serialize component data to a specified output. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="output">Ouput, to which the component's data sould be written</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DataVariable.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            Deserialize component data from a specified input. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="input">Input, on which component's data is available to read</param>
+        </member>
+        <member name="T:RF.CrawlingScript.Components.DictionaryExpressionValue">
+            <summary>
+            Describes an expression which represent value of an entry of a dictionary
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryExpressionValue.#ctor">
+            <summary>
+            Construct an empty <see cref="T:RF.CrawlingScript.Components.DataExpressionValue"/> expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryExpressionValue.#ctor(RF.CrawlingScript.Components.DictionaryExpression,RF.CrawlingScript.Components.TextExpression)">
+            <summary>
+            Construct a <see cref="T:RF.CrawlingScript.Components.DataExpressionValue"/> expression
+            </summary>
+            <param name="exp">Dictionary, which contains the entry</param>
+            <param name="key">Key associated with the entry</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryExpressionValue.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            Serialize component data to a specified output. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="output">Ouput, to which the component's data sould be written</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryExpressionValue.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            Deserialize component data from a specified input. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="input">Input, on which component's data is available to read</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryExpressionValue.Evaluate(RF.CrawlingScript.Context,System.Object@)">
+            <summary>
+            Evalutes the expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context on which the script is running</param>
+            <param name="result">Result of the expression evaluation</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryExpressionValue.Set(RF.CrawlingScript.Context,System.Object)">
+            <summary>
+            Sets value for the variable. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context, on which the script is running</param>
+            <param name="value">Value to be set to the variable</param>
+        </member>
+        <member name="T:RF.CrawlingScript.Components.DictionaryExpression">
+            <summary>
+            Define an expression which represent a dictionary
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryExpression.op_Implicit(System.Collections.Generic.Dictionary{System.String,System.String})~RF.CrawlingScript.Components.DictionaryExpression">
+            <summary>
+            Convert a dictionary to <see cref="T:RF.CrawlingScript.Components.DictionaryExpression"/>
+            </summary>
+            <param name="value">Dictionary to be converted</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryExpression.GetEnumerator(RF.CrawlingScript.Context,System.Collections.IEnumerator@)">
+            <summary>
+            Gets the enumerator for records contained within the set. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context, on which the script is running</param>
+            <param name="enumerator">Enumerator which could be used to access to records of the set</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryExpression.Convert(System.Object)">
+            <summary>
+            Converts a record to a valid form to be passed on in RFCScript. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="element">Raw data of a record</param>
+            <returns>Valid form of record's data to be passed on</returns>
+        </member>
+        <member name="P:RF.CrawlingScript.Components.DictionaryExpression.Item(System.Int32)">
+            <summary>
+            Gets value of an entry, associated with a specified key within current dictionary
+            </summary>
+            <param name="key">Key of an entry, value of which to be returned</param>
+            <returns></returns>
+        </member>
+        <member name="P:RF.CrawlingScript.Components.DictionaryExpression.Item(RF.CrawlingScript.Components.TextExpression)">
+            <summary>
+            Gets value of an entry, associated with a specified key within current dictionary
+            </summary>
+            <param name="key">Key of an entry, value of which to be returned</param>
+            <returns></returns>
+        </member>
+        <member name="P:RF.CrawlingScript.Components.DictionaryExpression.Count">
+            <summary>
+            Get the number of entry contained within current dictionary
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryExpression.DoCount(RF.CrawlingScript.Context,System.Int32@)">
+            <summary>
+            Gets the number of data records contained within the set. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context, on which the script is running</param>
+            <param name="result">Number of data records contained within the set</param>
+        </member>
+        <member name="T:RF.CrawlingScript.Components.DictionaryValue">
+            <summary>
+            Describes a dictionary in RFCScript
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryValue.#ctor">
+            <summary>
+            Construct an empty <see cref="T:RF.CrawlingScript.Components.DictionaryValue"/>. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryValue.#ctor(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Construct a <see cref="T:RF.CrawlingScript.Components.DictionaryValue"/>
+            </summary>
+            <param name="value">Value to be represented</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryValue.Evaluate(RF.CrawlingScript.Context,System.Object@)">
+            <summary>
+            Evalutes the expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context on which the script is running</param>
+            <param name="result">Result of the expression evaluation</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryValue.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            Serialize component data to a specified output. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="output">Ouput, to which the component's data sould be written</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryValue.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            Deserialize component data from a specified input. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="input">Input, on which component's data is available to read</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryValue.DoCount(RF.CrawlingScript.Context,System.Int32@)">
+            <summary>
+            Gets the number of data records contained within the set. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context, on which the script is running</param>
+            <param name="result">Number of data records contained within the set</param>
+        </member>
+        <member name="T:RF.CrawlingScript.Components.Code">
+            <summary>
+            Defines RFCScript executable code
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.Code.Execute(RF.CrawlingScript.Context,System.Boolean@)">
+            <summary>
+            Execute a code. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context, on which the script is running</param>
+            <param name="isBreaking">Indicates whether the code is demanded to be broken half way</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.Code.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            Serialize component data to a specified output. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="output">Ouput, to which the component's data sould be written</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.Code.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            Deserialize component data from a specified input. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="input">Input, on which component's data is available to read</param>
+        </member>
+        <member name="T:RF.CrawlingScript.Components.CodeBlock">
+            <summary>
+            Describes an executable block of code of RFCScript
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.CodeBlock.#ctor">
+            <summary>
+            Construct an empty block of RFCScript code. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.CodeBlock.#ctor(RF.CrawlingScript.Definitions.ICode[])">
+            <summary>
+            Construct a block of RFCScript code
+            </summary>
+            <param name="code">Codes, belong to current block</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.CodeBlock.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through code contained within the block.
+            </summary>
+            <returns>an enumerator that iterates through code contained within the block</returns>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.CodeBlock.Add(RF.CrawlingScript.Definitions.ICode)">
+            <summary>
+            Add a RFCScript to the the end of current code block
+            </summary>
+            <param name="code">Code to be added</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.CodeBlock.Execute(RF.CrawlingScript.Context,System.Boolean@)">
+            <summary>
+            Execute code, contained within the block. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context, on which the script is running</param>
+            <param name="isBreaking">Indicates whether the code is demanded to be broken half way</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.CodeBlock.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            Serialize <see cref="T:RF.CrawlingScript.Components.CodeBlock"/> data to a specified output. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="output">Ouput, to which the component's data sould be written</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.CodeBlock.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            Deserialize <see cref="T:RF.CrawlingScript.Components.CodeBlock"/> data from a specified input. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="input">Input, on which component's data is available to read</param>
+        </member>
+        <member name="T:RF.CrawlingScript.Components.DictionaryVariable">
+            <summary>
+            Describes a variable which represent a dictionary in RFCSCript
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryVariable.#ctor">
+            <summary>
+            Construct an empty <see cref="T:RF.CrawlingScript.Components.DictionaryVariable"/> expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryVariable.#ctor(System.Int32)">
+            <summary>
+            Construct a <see cref="T:RF.CrawlingScript.Components.DictionaryVariable"/>
+            </summary>
+            <param name="name">Variable's identifier</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryVariable.Set(RF.CrawlingScript.Context,System.Object)">
+            <summary>
+            Sets value for the variable. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context, on which the script is running</param>
+            <param name="value">Value to be set to the variable</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryVariable.Evaluate(RF.CrawlingScript.Context,System.Object@)">
+            <summary>
+            Evalutes the expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context on which the script is running</param>
+            <param name="result">Result of the expression evaluation</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryVariable.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            Serialize component data to a specified output. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="output">Ouput, to which the component's data sould be written</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryVariable.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            Deserialize component data from a specified input. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="input">Input, on which component's data is available to read</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryVariable.DoCount(RF.CrawlingScript.Context,System.Int32@)">
+            <summary>
+            Gets the number of data records contained within the set. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context, on which the script is running</param>
+            <param name="result">Number of data records contained within the set</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryVariable.ContainsKey(RF.CrawlingScript.Components.TextExpression)">
+            <summary>
+            Indicates whether the dictionary contains provided key or not
+            </summary>
+            <param name="key">key to be tested</param>
+            <returns>instance of <see cref="T:RF.CrawlingScript.Functions.ContainKey"/></returns>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryVariable.ContainsValue(RF.CrawlingScript.Components.TextExpression)">
+            <summary>
+            Indicates whether the dictionary contains provided value or not
+            </summary>
+            <param name="value">Value to be tested</param>
+            <returns>instance of <see cref="T:RF.CrawlingScript.Functions.ContainValue"/></returns>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryVariable.FirstKeyOf(RF.CrawlingScript.Components.TextExpression)">
+            <summary>
+            Get the first key of provided value within the dictionary
+            </summary>
+            <param name="value">value, key of which to be returned</param>
+            <returns>instance of <see cref="T:RF.CrawlingScript.Functions.FirstKeyOf"/></returns>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.DictionaryVariable.Clear">
+            <summary>
+            Clear the dictionary
+            </summary>
+            <returns>instance of <see cref="T:RF.CrawlingScript.Functions.Clear"/></returns>
+        </member>
+        <member name="T:RF.CrawlingScript.Components.Value`1">
+            <summary>
+            Define an expression which represent data of type <typeparamref name="T"/>
+            </summary>
+            <typeparam name="T">Type of data to be represented</typeparam>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.Value`1.Evaluate(RF.CrawlingScript.Context,`0@)">
+            <summary>
+            Evalutes the expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context on which the script is running</param>
+            <param name="result">Result of the expression evaluation</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.Value`1.op_RightShift(RF.CrawlingScript.Components.Value{`0},System.Int32)">
+            <summary>
+            Set current value to a variable, registered using implicit convention to <see cref="T:System.Int32"/>
+            </summary>
+            <param name="value">Value to be set to a variable</param>
+            <param name="variable">Variable to be registered using implicit convention to <see cref="T:System.Int32"/></param>
+            <returns>Instance of <see cref="T:RF.CrawlingScript.Components.Setter"/></returns>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.Value`1.op_Implicit(RF.CrawlingScript.Components.Value{`0})~System.Int32">
+            <summary>
+            Register an instance of <see cref="T:RF.CrawlingScript.Components.Value`1"/> (which must implement <see cref="T:RF.CrawlingScript.Definitions.IVariable`1"/>) for setting operation
+            </summary>
+            <param name="value">Variable to be registered</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.Value`1.Evaluate(RF.CrawlingScript.Context,System.Object@)">
+            <summary>
+            Evalutes the expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context on which the script is running</param>
+            <param name="result">Result of the expression evaluation</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.Value`1.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            Serialize component data to a specified output. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="output">Ouput, to which the component's data sould be written</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.Value`1.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            Deserialize component data from a specified input. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="input">Input, on which component's data is available to read</param>
+        </member>
+        <member name="P:RF.CrawlingScript.Components.Value`1.Text">
+            <summary>
+            Represent current value as a <see cref="T:RF.CrawlingScript.Components.TextExpression"/>
+            </summary>
+        </member>
+        <member name="P:RF.CrawlingScript.Components.Value`1.Number">
+            <summary>
+            Represent current value as a <see cref="T:RF.CrawlingScript.Components.NumberExpression"/>
+            </summary>
+        </member>
+        <member name="P:RF.CrawlingScript.Components.Value`1.Logic">
+            <summary>
+            Represent current value as a <see cref="T:RF.CrawlingScript.Components.LogicExpression"/>
+            </summary>
+        </member>
+        <member name="P:RF.CrawlingScript.Components.Value`1.Data">
+            <summary>
+            Represent current value as a <see cref="T:RF.CrawlingScript.Components.DataExpression"/> 
+            </summary>
+        </member>
+        <member name="T:RF.CrawlingScript.Definitions.ISet">
+            <summary>
+            Defines a set of data of RFCScript
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Definitions.ISet.DoCount(RF.CrawlingScript.Context,System.Int32@)">
+            <summary>
+            Gets the number of data records contained within the set. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context, on which the script is running</param>
+            <param name="result">Number of data records contained within the set</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Definitions.ISet.GetEnumerator(RF.CrawlingScript.Context,System.Collections.IEnumerator@)">
+            <summary>
+            Gets the enumerator for records contained within the set. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context, on which the script is running</param>
+            <param name="enumerator">Enumerator which could be used to access to records of the set</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Definitions.ISet.Convert(System.Object)">
+            <summary>
+            Converts a record to a valid form to be passed on in RFCScript. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="element">Raw data of a record</param>
+            <returns>Valid form of record's data to be passed on</returns>
+        </member>
+        <member name="T:RF.CrawlingScript.Definitions.ISerializable">
+            <summary>
+            Defines a serializable component of RFCScript
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Definitions.ISerializable.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            Serialize component data to a specified output. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="output">Ouput, to which the component's data sould be written</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Definitions.ISerializable.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            Deserialize component data from a specified input. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="input">Input, on which component's data is available to read</param>
+        </member>
+        <member name="T:RF.CrawlingScript.Definitions.LogicOperations">
+            <summary>
+            Defines logical operations supported by RFCScript
+            </summary>
+        </member>
+        <member name="F:RF.CrawlingScript.Definitions.LogicOperations.And">
+            <summary>
+            Logical and operation
+            </summary>
+        </member>
+        <member name="F:RF.CrawlingScript.Definitions.LogicOperations.Or">
+            <summary>
+            Logical or operation
+            </summary>
+        </member>
+        <member name="F:RF.CrawlingScript.Definitions.LogicOperations.Xor">
+            <summary>
+            Logical xor operation
+            </summary>
+        </member>
+        <member name="F:RF.CrawlingScript.Definitions.LogicOperations.Not">
+            <summary>
+            Logical not operation
+            </summary>
+        </member>
+        <member name="F:RF.CrawlingScript.Definitions.LogicOperations.Equal">
+            <summary>
+            Logical equal operation
+            </summary>
+        </member>
+        <member name="F:RF.CrawlingScript.Definitions.LogicOperations.NotEqual">
+            <summary>
+            Logical not equal operation
+            </summary>
+        </member>
+        <member name="T:RF.CrawlingScript.Definitions.NumberCompareOperations">
+            <summary>
+            Defines numberic comparation operations supported by RFCScript
+            </summary>
+        </member>
+        <member name="F:RF.CrawlingScript.Definitions.NumberCompareOperations.Greater">
+            <summary>
+            First operand is greater than the second operand
+            </summary>
+        </member>
+        <member name="F:RF.CrawlingScript.Definitions.NumberCompareOperations.Lesser">
+            <summary>
+            First operand is lesser than the second operand
+            </summary>
+        </member>
+        <member name="F:RF.CrawlingScript.Definitions.NumberCompareOperations.GreaterOrEqual">
+            <summary>
+            First operand is greater or equal the second operand
+            </summary>
+        </member>
+        <member name="F:RF.CrawlingScript.Definitions.NumberCompareOperations.LesserOrEqual">
+            <summary>
+            First operand is lesser or equal the second operand
+            </summary>
+        </member>
+        <member name="F:RF.CrawlingScript.Definitions.NumberCompareOperations.Equal">
+            <summary>
+            First operand is equal to the second operand
+            </summary>
+        </member>
+        <member name="F:RF.CrawlingScript.Definitions.NumberCompareOperations.NotEqual">
+            <summary>
+            First operand is not equal to the second operand
+            </summary>
+        </member>
+        <member name="T:RF.CrawlingScript.Definitions.NumberOperations">
+            <summary>
+            Defines numberic operations supported by RFCScript
+            </summary>
+        </member>
+        <member name="F:RF.CrawlingScript.Definitions.NumberOperations.Add">
+            <summary>
+            Adding to numberic value together
+            </summary>
+        </member>
+        <member name="F:RF.CrawlingScript.Definitions.NumberOperations.Subtract">
+            <summary>
+            Substract first operand to second operand
+            </summary>
+        </member>
+        <member name="F:RF.CrawlingScript.Definitions.NumberOperations.Multiply">
+            <summary>
+            Multiply first operand to second operand
+            </summary>
+        </member>
+        <member name="F:RF.CrawlingScript.Definitions.NumberOperations.Divide">
+            <summary>
+            Divide first operand to second operand
+            </summary>
+        </member>
+        <member name="F:RF.CrawlingScript.Definitions.NumberOperations.Module">
+            <summary>
+            Get module of first operand to second operand
+            </summary>
+        </member>
+        <member name="T:RF.CrawlingScript.Definitions.ICode">
+            <summary>
+            Defines RFCScript executable code
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Definitions.ICode.Execute(RF.CrawlingScript.Context,System.Boolean@)">
+            <summary>
+            Execute a code. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context, on which the script is running</param>
+            <param name="isBreaking">Indicates whether the code is demanded to be broken half way</param>
+        </member>
+        <member name="T:RF.CrawlingScript.Definitions.IExpression">
+            <summary>
+            Defines an expression of RFCScript
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Definitions.IExpression.Evaluate(RF.CrawlingScript.Context,System.Object@)">
+            <summary>
+            Evalutes the expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context on which the script is running</param>
+            <param name="result">Result of the expression evaluation</param>
+        </member>
+        <member name="T:RF.CrawlingScript.Definitions.IExpression`1">
+            <summary>
+            Defines an expression with specified return type of RFCScript
+            </summary>
+            <typeparam name="T">Type of data to be returned by the expression</typeparam>
+        </member>
+        <member name="M:RF.CrawlingScript.Definitions.IExpression`1.Evaluate(RF.CrawlingScript.Context,`0@)">
+            <summary>
+            Evalutes the expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context on which the script is running</param>
+            <param name="result">Result of the expression evaluation</param>
+        </member>
+        <member name="T:RF.CrawlingScript.Definitions.IVariable">
+            <summary>
+            Defines RFCScript's variable
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Definitions.IVariable.Set(RF.CrawlingScript.Context,System.Object)">
+            <summary>
+            Sets value for the variable. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context, on which the script is running</param>
+            <param name="value">Value to be set to the variable</param>
+        </member>
+        <member name="T:RF.CrawlingScript.Definitions.IVariable`1">
+            <summary>
+            Defines RFCScript's variable with specified base data type
+            </summary>
+            <typeparam name="T">Type of base data of the variable</typeparam>
+        </member>
+        <member name="T:RF.CrawlingScript.Definitions.TextCompareOperations">
+            <summary>
+            Defines text comparation operations supported by RFCScript
+            </summary>
+        </member>
+        <member name="F:RF.CrawlingScript.Definitions.TextCompareOperations.Equal">
+            <summary>
+            Two texts are equal
+            </summary>
+        </member>
+        <member name="F:RF.CrawlingScript.Definitions.TextCompareOperations.NotEqual">
+            <summary>
+            Tow texts are not equal
+            </summary>
+        </member>
+        <member name="F:RF.CrawlingScript.Definitions.TextCompareOperations.Greater">
+            <summary>
+            First text is greater than the second one
+            </summary>
+        </member>
+        <member name="F:RF.CrawlingScript.Definitions.TextCompareOperations.Lesser">
+            <summary>
+            First text is lesser than the second one
+            </summary>
+        </member>
+        <member name="T:RF.CrawlingScript.Definitions.TextOperations">
+            <summary>
+            Defines text operations supported by RFCScript
+            </summary>
+        </member>
+        <member name="F:RF.CrawlingScript.Definitions.TextOperations.Add">
+            <summary>
+            Adding two texts together
+            </summary>
+        </member>
+    </members>
+</doc>
