@@ -57,6 +57,9 @@
     <Compile Include="Components\DataValue.cs" />
     <Compile Include="Components\DataVariable.cs" />
     <Compile Include="Components\DictionaryExpressionValue.cs" />
+    <Compile Include="Components\RequestExpression.cs" />
+    <Compile Include="Components\RequestValue.cs" />
+    <Compile Include="Components\RequestVariable.cs" />
     <Compile Include="Components\TextPairExpression.cs" />
     <Compile Include="Components\TextPairKeyExpression.cs" />
     <Compile Include="Components\TextPairValue.cs" />
@@ -64,6 +67,7 @@
     <Compile Include="Components\DictionaryValue.cs" />
     <Compile Include="Components\SerializerContractAttribute.cs" />
     <Compile Include="Components\TextPairValueExpression.cs" />
+    <Compile Include="Data\RequestData.cs" />
     <Compile Include="Definitions\ISet.cs" />
     <Compile Include="dict.cs" />
     <Compile Include="exec.cs" />
@@ -92,9 +96,15 @@
     <Compile Include="Functions\IsNumber.cs" />
     <Compile Include="Functions\LastIndex.cs" />
     <Compile Include="Functions\Read.cs" />
+    <Compile Include="Functions\ReadFile.cs" />
     <Compile Include="Functions\ReadKey.cs" />
     <Compile Include="Functions\ReadLine.cs" />
     <Compile Include="Functions\Replace.cs" />
+    <Compile Include="Functions\RequestAddPost.cs" />
+    <Compile Include="Functions\RequestAddUpload.cs" />
+    <Compile Include="Functions\RequestSetAccept.cs" />
+    <Compile Include="Functions\RequestSetPayload.cs" />
+    <Compile Include="Functions\RequestSubmit.cs" />
     <Compile Include="Functions\ToASCII.cs" />
     <Compile Include="Functions\ToData.cs" />
     <Compile Include="Functions\ToLogic.cs" />
@@ -112,6 +122,7 @@
     <Compile Include="EachExtension.cs" />
     <Compile Include="pair.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="request.cs" />
     <Compile Include="StayExtension.cs" />
     <Compile Include="Structures\For.cs" />
     <Compile Include="Structures\Leave.cs" />
@@ -120,7 +131,6 @@
     <Compile Include="Utilities\EachWrapper.cs" />
     <Compile Include="Utilities\Http\MultiPartRequestData.cs" />
     <Compile Include="Utilities\OthersDirective.cs" />
-    <Compile Include="Functions\Request.cs" />
     <Compile Include="Structures\Switch.cs" />
     <Compile Include="Structures\SwitchNumber.cs" />
     <Compile Include="Utilities\Http\IRequestData.cs" />

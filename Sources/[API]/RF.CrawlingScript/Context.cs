@@ -24,7 +24,7 @@ namespace RF.CrawlingScript
             Variables[name] = value;
         }
 
-        internal object GetObect(string name)
+        internal object GetObject(string name)
         {
             return Objects?[name] ?? null;
         }

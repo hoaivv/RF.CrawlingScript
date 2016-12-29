@@ -60,6 +60,14 @@ namespace RF.CrawlingScript
             }
         }
 
+        public RequestVariable request
+        {
+            get
+            {
+                return new RequestVariable(Counter++);
+            }
+        }
+
         public TextExpression this[string value]
         {
             get

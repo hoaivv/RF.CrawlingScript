@@ -43,7 +43,7 @@ namespace RF.CrawlingScript.Components
 
             if (!context.HasObject(name)) context.SetObject(name, new Dictionary<string, string>());
 
-            result = context.GetObect(name);
+            result = context.GetObject(name);
 
             if (!(result is Dictionary<string, string>)) throw new InvalidOperationException();
         }

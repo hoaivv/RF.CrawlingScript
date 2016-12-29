@@ -461,6 +461,25 @@
             <param name="context">Context, on which the script is running</param>
             <param name="value">Value to be set to the variable</param>
         </member>
+        <member name="M:RF.CrawlingScript.Components.RequestVariable.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            Serialize component data to a specified output. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="output">Ouput, to which the component's data sould be written</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.RequestVariable.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            Deserialize component data from a specified input. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="input">Input, on which component's data is available to read</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.RequestVariable.Set(RF.CrawlingScript.Context,System.Object)">
+            <summary>
+            Sets value for the variable. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context, on which the script is running</param>
+            <param name="value">Value to be set to the variable</param>
+        </member>
         <member name="T:RF.CrawlingScript.Components.DictionaryExpression">
             <summary>
             Define an expression which represent a dictionary
@@ -624,6 +643,136 @@
             Deserialize <see cref="T:RF.CrawlingScript.Components.CodeBlock"/> data from a specified input. This method is designed to be invoked internally by RFCScript components only.
             </summary>
             <param name="input">Input, on which component's data is available to read</param>
+        </member>
+        <member name="T:RF.CrawlingScript.Components.LogicExpression">
+            <summary>
+            Defines an expression which represent a logical value (boolean)
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.LogicExpression.op_Implicit(System.Boolean)~RF.CrawlingScript.Components.LogicExpression">
+            <summary>
+            Convert <see cref="T:System.Boolean"/> value to <see cref="T:RF.CrawlingScript.Components.LogicExpression"/>
+            </summary>
+            <param name="value">Value to be converted</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.LogicExpression.op_BitwiseAnd(RF.CrawlingScript.Components.LogicExpression,RF.CrawlingScript.Components.LogicExpression)">
+            <summary>
+            Performs logical and operation
+            </summary>
+            <param name="v1">First operand</param>
+            <param name="v2">Second operand</param>
+            <returns><see cref="T:RF.CrawlingScript.Components.LogicExpression"/> which represent result of the operation</returns>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.LogicExpression.op_BitwiseOr(RF.CrawlingScript.Components.LogicExpression,RF.CrawlingScript.Components.LogicExpression)">
+            <summary>
+            Performs logical or operation
+            </summary>
+            <param name="v1">First operand</param>
+            <param name="v2">Second operand</param>
+            <returns><see cref="T:RF.CrawlingScript.Components.LogicExpression"/> which represent result of the operation</returns>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.LogicExpression.op_ExclusiveOr(RF.CrawlingScript.Components.LogicExpression,RF.CrawlingScript.Components.LogicExpression)">
+            <summary>
+            Performs logical xor operation
+            </summary>
+            <param name="v1">First operand</param>
+            <param name="v2">Second operand</param>
+            <returns><see cref="T:RF.CrawlingScript.Components.LogicExpression"/> which represent result of the operation</returns>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.LogicExpression.op_LogicalNot(RF.CrawlingScript.Components.LogicExpression)">
+            <summary>
+            Performs logical not operation
+            </summary>
+            <param name="v">Operand</param>
+            <returns><see cref="T:RF.CrawlingScript.Components.LogicExpression"/> which represent result of the operation</returns>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.LogicExpression.op_Equality(RF.CrawlingScript.Components.LogicExpression,RF.CrawlingScript.Components.LogicExpression)">
+            <summary>
+            Compares equality of two <see cref="T:RF.CrawlingScript.Components.LogicExpression"/>
+            </summary>
+            <param name="v1">First operand</param>
+            <param name="v2">Second operand</param>
+            <returns><see cref="T:RF.CrawlingScript.Components.LogicExpression"/> which represent result of the operation</returns>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.LogicExpression.op_Inequality(RF.CrawlingScript.Components.LogicExpression,RF.CrawlingScript.Components.LogicExpression)">
+            <summary>
+            Compares inequality of two <see cref="T:RF.CrawlingScript.Components.LogicExpression"/>
+            </summary>
+            <param name="v1">First operand</param>
+            <param name="v2">Second operand</param>
+            <returns><see cref="T:RF.CrawlingScript.Components.LogicExpression"/> which represent result of the operation</returns>
+        </member>
+        <member name="T:RF.CrawlingScript.Components.LogicNotExpression">
+            <summary>
+            Describes an expression which represents result of applying logical not operation to a <see cref="T:RF.CrawlingScript.Components.LogicExpression"/>
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.LogicNotExpression.#ctor">
+            <summary>
+            Construct an empty <see cref="T:RF.CrawlingScript.Components.LogicNotExpression"/> expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.LogicNotExpression.#ctor(RF.CrawlingScript.Components.LogicExpression)">
+            <summary>
+            Construct a <see cref="T:RF.CrawlingScript.Components.LogicNotExpression"/>
+            </summary>
+            <param name="exp">Expresion to be inverted logically</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.LogicNotExpression.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            Serialize component data to a specified output. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="output">Ouput, to which the component's data sould be written</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.LogicNotExpression.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            Deserialize component data from a specified input. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="input">Input, on which component's data is available to read</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.LogicNotExpression.Evaluate(RF.CrawlingScript.Context,System.Object@)">
+            <summary>
+            Evalutes the expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context on which the script is running</param>
+            <param name="result">Result of the expression evaluation</param>
+        </member>
+        <member name="T:RF.CrawlingScript.Components.LogicCombineExpression">
+            <summary>
+            Describes an expression which is a result of applying a logical combine operation
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.LogicCombineExpression.#ctor">
+            <summary>
+            Construct an empty <see cref="T:RF.CrawlingScript.Components.LogicCombineExpression"/> expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.LogicCombineExpression.#ctor(RF.CrawlingScript.Components.LogicExpression,RF.CrawlingScript.Components.LogicExpression,RF.CrawlingScript.Definitions.LogicOperations)">
+            <summary>
+            Construct a <see cref="T:RF.CrawlingScript.Components.LogicCombineExpression"/>
+            </summary>
+            <param name="exp1">First operand of the operation</param>
+            <param name="exp2">Second operand of the operation</param>
+            <param name="operation">Operation to be applied</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.LogicCombineExpression.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            Serialize component data to a specified output. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="output">Ouput, to which the component's data sould be written</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.LogicCombineExpression.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            Deserialize component data from a specified input. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="input">Input, on which component's data is available to read</param>
+        </member>
+        <member name="M:RF.CrawlingScript.Components.LogicCombineExpression.Evaluate(RF.CrawlingScript.Context,System.Object@)">
+            <summary>
+            Evalutes the expression. This method is designed to be invoked internally by RFCScript components only.
+            </summary>
+            <param name="context">Context on which the script is running</param>
+            <param name="result">Result of the expression evaluation</param>
         </member>
         <member name="T:RF.CrawlingScript.Components.DictionaryVariable">
             <summary>

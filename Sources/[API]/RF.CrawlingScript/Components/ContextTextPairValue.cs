@@ -43,7 +43,7 @@ namespace RF.CrawlingScript.Components
 
             if (!context.HasObject(name)) context.SetObject(name, new KeyValuePair<string, string>());
 
-            result = context.GetObect(name);
+            result = context.GetObject(name);
 
             if (!(result is KeyValuePair<string, string>)) throw new InvalidOperationException();
         }

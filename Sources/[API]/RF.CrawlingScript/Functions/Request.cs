@@ -13,6 +13,8 @@ namespace RF.CrawlingScript.Functions
 {
     public class Request : LogicExpression, ICode
     {
+        public static Request Current { get; private set; } = null;
+
         private TextExpression Url { get; set; }
         private TextExpression Accept { get; set; }
 
@@ -32,7 +34,7 @@ namespace RF.CrawlingScript.Functions
 
             output.Write(PostFormName.Count);
 
-            for(int i = 0; i < PostFormName.Count; i++)
+            for (int i = 0; i < PostFormName.Count; i++)
             {
                 Script.Serialize(output, PostFormName[i]);
                 Script.Serialize(output, PostDataName[i]);
@@ -53,7 +55,7 @@ namespace RF.CrawlingScript.Functions
             PostDataName.Clear();
             PostDataValue.Clear();
 
-            for(int i = 0; i < count; i++)
+            for (int i = 0; i < count; i++)
             {
                 PostFormName.Add(Script.Deserialize(input) as TextExpression);
                 PostDataName.Add(Script.Deserialize(input) as TextExpression);
@@ -136,8 +138,74 @@ namespace RF.CrawlingScript.Functions
             return this;
         }
 
+        public Request Wait()
+        {
+            Current = this;
+            return this;
+        }
+
+        public Request Submit()
+        {
+            Current = null;
+            return this;
+        }
+
         public override void Evaluate(Context context, out object result)
         {
+            if ((object)Current == (object)this)
+            {
+                EvaluateWait(context, out result);
+            }
+            else
+            {
+                EvaluateSubmit(context, out result);
+            }
+        }
+
+        private void EvaluateWait(Context context, out object result)
+        {
+            string url; Url.Evaluate(context, out url);
+            Url = url;
+
+            bool saveAsReferer; SaveAsReferer.Evaluate(context, out saveAsReferer);
+            SaveAsReferer = saveAsReferer;
+
+            if ((object)Accept != null)
+            {
+                string accept; Accept.Evaluate(context, out accept);
+                Accept = accept;
+            }
+            for (int i = 0; i < PostDataValue.Count; i++)
+            {
+                string formName = null;
+                string dataName = null;
+
+                PostFormName[i].Evaluate(context, out formName);
+                PostFormName[i] = formName;
+
+                PostDataName[i]?.Evaluate(context, out dataName);
+                PostDataName[i] = dataName == null ? null : new TextValue(dataName);
+
+                if ((object)PostDataValue[i] != null)
+                {
+                    object obj; PostDataValue[i].Evaluate(context, out obj);
+
+                    if (PostDataValue[i] is DataExpression)
+                    {
+                        PostDataValue[i] = new DataValue((byte[])obj);
+                    }
+                    else
+                    {
+                        PostDataValue[i] = new TextValue((string)obj);
+                    }
+                }
+            }
+
+            result = true;
+        }
+
+        private void EvaluateSubmit(Context context, out object result)
+        { 
             string url; Url.Evaluate(context, out url);
             bool saveAsReferer; SaveAsReferer.Evaluate(context, out saveAsReferer);
 
@@ -213,11 +281,11 @@ namespace RF.CrawlingScript.Functions
                 }
             }
 
-            result = (context.GetObect("request.transaction") as Transaction).Request(url, post, saveAsReferer);
+            result = (context.GetObject("request.transaction") as Transaction).Request(url, post, saveAsReferer);
 
             if ((bool)result && (object)Storage != null)
             {
-                byte[] data = (context.GetObect("request.transaction") as Transaction).ResponseData;
+                byte[] data = (context.GetObject("request.transaction") as Transaction).ResponseData;
 
                 Storage.Set(context, Storage is DataVariable ? (object)data : (object)Encoding.UTF8.GetString(data));
             }

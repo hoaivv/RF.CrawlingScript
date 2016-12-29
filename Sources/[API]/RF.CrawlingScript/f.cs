@@ -36,6 +36,11 @@ namespace RF.CrawlingScript
             return new WriteFile(name, value);
         }
 
+        public ReadFile ReadFile(TextExpression file)
+        {
+            return new ReadFile(file);
+        }
+
         public Max Max(params NumberExpression[] exps)
         {
             return new Max(exps);
@@ -74,11 +79,6 @@ namespace RF.CrawlingScript
         public Match Match(TextExpression input, TextExpression pattern)
         {
             return new Match(input, pattern);
-        }
-
-        public static Request Request(TextExpression url, LogicExpression saveAsReferer)
-        {
-            return new Request(url, saveAsReferer);
         }
 
         public static Get Get(TextExpression service, TextVariable storage, DictionaryExpression request = null)

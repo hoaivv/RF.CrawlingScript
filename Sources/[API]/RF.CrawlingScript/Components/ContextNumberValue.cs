@@ -42,7 +42,7 @@ namespace RF.CrawlingScript.Components
 
             if (!context.HasObject(name)) context.SetObject(name, default(decimal));
 
-            result = context.GetObect(name);
+            result = context.GetObject(name);
 
             if (!(result is decimal)) throw new InvalidOperationException();
         }

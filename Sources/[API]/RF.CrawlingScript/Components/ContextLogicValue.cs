@@ -42,7 +42,7 @@ namespace RF.CrawlingScript.Components
 
             if (!context.HasObject(name)) context.SetObject(name, false);
 
-            result = context.GetObect(name);
+            result = context.GetObject(name);
 
             if (!(result is bool)) throw new InvalidOperationException();
         }
