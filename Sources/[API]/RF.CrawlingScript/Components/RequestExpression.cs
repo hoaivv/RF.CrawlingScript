@@ -37,6 +37,12 @@ namespace RF.CrawlingScript.Components
         {
             return new RequestSubmit(this, null);
         }
+
+        public RequestSubmit Submit(LogicExpression renew)
+        {
+            return new RequestSubmit(this, null, renew);
+        }
+
         public RequestSubmit Submit(TextVariable storage)
         {
             return new RequestSubmit(this, storage);
@@ -44,6 +50,16 @@ namespace RF.CrawlingScript.Components
         public RequestSubmit Submit(DataVariable storage)
         {
             return new RequestSubmit(this, storage);
+        }
+
+        public RequestSubmit Submit(TextVariable storage, LogicExpression renew)
+        {
+            return new RequestSubmit(this, storage, renew);
+        }
+
+        public RequestSubmit Submit(DataVariable storage, LogicExpression renew)
+        {
+            return new RequestSubmit(this, storage, renew);
         }
     }
 }

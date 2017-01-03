@@ -1,82 +1,71 @@
 ﻿using RF.CrawlingScript.Components;
 using RF.CrawlingScript.Definitions;
+using RF.CrawlingScript.Utilities.Http;
 using Shark;
 using System;
+using System.Drawing;
 using System.IO;
+using System.Text.RegularExpressions;
+using Tesseract;
 
 namespace RF.CrawlingScript.Examples
 {
-    class Example : Script
+
+    class Program
     {
-        public const string test = "<option value = \"1\" > Nh&#224; mat tien</option>";
-
-        private block post(TextExpression t1, TextExpression t2)
+        public static string DeCaptcha(Image source)
         {
-            return new block
+            string str = "0123456789";
+
+            try
             {
-                
-            };
+
+                TesseractEngine tesseract = new TesseractEngine(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "tessdata"), "eng");
+                tesseract.SetVariable("tessedit_char_whitelist", str);
+
+                Page page = tesseract.Process((Bitmap)source);
+
+                string result = Regex.Replace(page.GetText(), "([^0-9])", "");
+
+                tesseract.Dispose();
+
+                return result;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw e;
+            }
         }
 
-        public override block Implementation()
+
+
+        static void Main(string[] args)
         {
-            var pair = x.pair;
-            var data = x.data;
-            var r = x.request;
-            var i = x.number;
-
-            return new block
+            for (int i = 0; i < 10; i++)
             {
-                new request("http://localhost/index.php",false) >> r,
+                Transaction trans = new Transaction();
+                trans.Request("http://123nhadatviet.com/CaptchaGenerator.aspx", false);
 
-                r.Post("a","b"),
-                r.Post("a","b.jpg", new byte[] {1,2,3}),
+                File.WriteAllBytes("D:\\captcha.png", trans.ResponseData);
 
-                x[0] >> i, (i < Context.GetNumber("image-count")).Stay(true) > new exec
-                {
-                    r.Post("a" + i.Text, "b"+i.Text+".jpg", Context.GetData("image-" + i.Text + "-data")),
+                Image img = Image.FromFile("D:\\captcha.png");
+                Image thumb = img.GetThumbnailImage(img.Width * 4, img.Height * 5, null, IntPtr.Zero);
 
-                    i + 1 >> i,
-                },
+                thumb.Save("D:\\resized.png", System.Drawing.Imaging.ImageFormat.Png);
 
-                r.Submit(data),                
+                img.Dispose();
+                thumb.Dispose();
 
-                f.WriteFile("D:\\data.txt",data)
-            };
-        }
+                img = Image.FromFile("D:\\resized.png");
 
-        class Program
-        {
-            static void Main(string[] args)
-            {
-                Framework.Start();
+                string result = DeCaptcha(img);
 
-                Example e = new Example();
+                img.Dispose();
 
-                //e.Run();
-
-                if (!e.Build("D:\\test.rfc")) Console.WriteLine("failed");
-
-                Context context = new Context();
-
-                context.Set("info", new dict()
-                {
-                    {"a", "1" },
-                    {"b", "2" },
-                    {"c", "3" },
-                    {"d", "5" },
-                });
-
-                context.Set("image-2-data", new byte[1]);
-                context.Set("image-1-data", new byte[2]);
-                context.Set("image-0-data", new byte[3]);
-
-                context.Set("image-count", 3);
-
-                Script.Run(context, "D:\\test.rfc");
-                
-                Framework.Stop();
+                File.WriteAllBytes("D:\\" + result + ".png", trans.ResponseData);
             }
         }
     }
+
 }
