@@ -39,6 +39,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -95,6 +96,7 @@
     <Compile Include="Functions\HtmlDecode.cs" />
     <Compile Include="Functions\IsNumber.cs" />
     <Compile Include="Functions\LastIndex.cs" />
+    <Compile Include="Functions\Log.cs" />
     <Compile Include="Functions\Read.cs" />
     <Compile Include="Functions\ReadFile.cs" />
     <Compile Include="Functions\ReadKey.cs" />

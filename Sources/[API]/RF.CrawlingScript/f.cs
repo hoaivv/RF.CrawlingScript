@@ -31,6 +31,11 @@ namespace RF.CrawlingScript
             return new Write(exp);
         }
 
+        public Log Log(TextExpression exp)
+        {
+            return new Log(exp);
+        }
+
         public WriteFile WriteFile(TextExpression name, DataExpression value)
         {
             return new WriteFile(name, value);

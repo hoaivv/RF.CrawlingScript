@@ -42,29 +42,8 @@ namespace RF.CrawlingScript.Examples
 
         static void Main(string[] args)
         {
-            for (int i = 0; i < 10; i++)
-            {
-                Transaction trans = new Transaction();
-                trans.Request("http://123nhadatviet.com/CaptchaGenerator.aspx", false);
-
-                File.WriteAllBytes("D:\\captcha.png", trans.ResponseData);
-
-                Image img = Image.FromFile("D:\\captcha.png");
-                Image thumb = img.GetThumbnailImage(img.Width * 4, img.Height * 5, null, IntPtr.Zero);
-
-                thumb.Save("D:\\resized.png", System.Drawing.Imaging.ImageFormat.Png);
-
-                img.Dispose();
-                thumb.Dispose();
-
-                img = Image.FromFile("D:\\resized.png");
-
-                string result = DeCaptcha(img);
-
-                img.Dispose();
-
-                File.WriteAllBytes("D:\\" + result + ".png", trans.ResponseData);
-            }
+            Console.WriteLine(WebUtility("<option value=\"1\">C?n b&#225;n</option>"));
+            Console.ReadLine();
         }
     }
 
