@@ -2,6 +2,8 @@
 using RF.CrawlingScript.Functions;
 using System;
 using System.IO;
+using System.Text;
+using System.Text.RegularExpressions;
 
 [assembly: SerializerContract("f.ToASCII", typeof(ToASCII))]
 
@@ -47,6 +49,10 @@ namespace RF.CrawlingScript.Functions
         public override void Evaluate(Context context, out object result)
         {
             string text; Expression.Evaluate(context, out text);
+
+            Regex regex = new Regex("\\p{IsCombiningDiacriticalMarks}+");
+            text = text.Normalize(NormalizationForm.FormD);
+            text = regex.Replace(text, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D');
 
             for (int i = 0; i < UTF8Lookup.Length; i++)
             {

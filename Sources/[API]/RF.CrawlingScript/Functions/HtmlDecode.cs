@@ -1,7 +1,9 @@
 ﻿using RF.CrawlingScript.Components;
 using RF.CrawlingScript.Functions;
 using System;
+using System.Globalization;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Web;
 
 [assembly: SerializerContract("f.HtmlDecode", typeof(HtmlDecode))]
@@ -35,7 +37,9 @@ namespace RF.CrawlingScript.Functions
         {
             string text; Expression.Evaluate(context, out text);
 
-            result = HttpUtility.HtmlDecode(text);   
+            text = HttpUtility.HtmlDecode(text);
+
+            result = Regex.Replace(text, @"\\u([a-zA-Z0-9]{4})", m => ((char)int.Parse(m.Groups[1].Value, NumberStyles.HexNumber)).ToString());
         }
     }
 }

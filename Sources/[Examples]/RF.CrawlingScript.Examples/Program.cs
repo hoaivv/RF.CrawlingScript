@@ -4,7 +4,9 @@ using RF.CrawlingScript.Utilities.Http;
 using Shark;
 using System;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
+using System.Text;
 using System.Text.RegularExpressions;
 using Tesseract;
 
@@ -13,36 +15,9 @@ namespace RF.CrawlingScript.Examples
 
     class Program
     {
-        public static string DeCaptcha(Image source)
-        {
-            string str = "0123456789";
-
-            try
-            {
-
-                TesseractEngine tesseract = new TesseractEngine(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "tessdata"), "eng");
-                tesseract.SetVariable("tessedit_char_whitelist", str);
-
-                Page page = tesseract.Process((Bitmap)source);
-
-                string result = Regex.Replace(page.GetText(), "([^0-9])", "");
-
-                tesseract.Dispose();
-
-                return result;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw e;
-            }
-        }
-
-
-
         static void Main(string[] args)
-        {
-            Console.WriteLine(WebUtility("<option value=\"1\">C?n b&#225;n</option>"));
+        {            Console.WriteLine(Regex.Replace("The pi is \\u03a0", @"\\u([a-zA-Z0-9]{4})", m => 
+        ((char)int.Parse(m.Groups[1].Value, NumberStyles.HexNumber)).ToString()));
             Console.ReadLine();
         }
     }
